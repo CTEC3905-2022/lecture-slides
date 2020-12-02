@@ -5,7 +5,7 @@ body {
 	margin: 0;
 }
 
-main {
+#slides section {
 	width: 80%;
 	margin: 5vh auto;
 	background-color: #fff;
@@ -13,9 +13,13 @@ main {
 	text-align: center;
 	overflow: auto;
 	border-radius: 1em;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: space-around;
+}
+
+#slides section.current {
+	display: flex;
 }
 
 img {
@@ -38,7 +42,19 @@ footer {
 	width: 100%;
 	color: #bbb;
 	padding: 0.25em 1em;
+	box-sizing: border-box;
+	user-select: none;
 	display: flex;
 	justify-content: space-between;
-	box-sizing: border-box;
+	align-items: baseline;
+}
+
+#toolbar {
+	display: flex;
+	justify-content: center;
+	font-size: 1.2em;
+}
+
+#current {
+	margin: 0 1em;
 }
