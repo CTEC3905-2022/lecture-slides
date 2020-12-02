@@ -22,7 +22,7 @@ img {
 	width: 20%;
 }
 
-h1, h2 {
+h1, h2, footer {
 	font-family: "Baloo Chettan 2", sans-serif;
 }
 h1 {
@@ -30,4 +30,15 @@ h1 {
 }
 h2 {
 	font-size: 3em;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	color: #bbb;
+	padding: 0.25em 1em;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
 }
