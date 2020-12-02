@@ -50,9 +50,15 @@ footer {
 }
 
 #toolbar {
+	opacity: 0;
 	display: flex;
 	justify-content: center;
 	font-size: 1.2em;
+	transition: opacity 0.4s;
+}
+
+#toolbar:hover {
+	opacity: 1;
 }
 
 #current {
