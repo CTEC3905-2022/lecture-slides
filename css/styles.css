@@ -4,24 +4,38 @@ body {
 	background-color: #444;
 	margin: 0;
 	font-family: "Baloo Chettan 2", sans-serif;
+	overflow: hidden;
 }
 
 #slideDeck section {
 	font-size: 200%;
-	width: 80%;
-	margin: 5vh auto;
-	background-color: #fff;
-	min-height: 90vh;
 	text-align: center;
-	overflow: auto;
+	background-color: #fff;
+	opacity: 0;
+	margin: 5vh auto;
+	width: 80vw;
+	min-height: 90vh;
 	border-radius: 1em;
-	display: none;
+	overflow: auto;
+	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	position: absolute;
+	left: 10vw;
+	transition: opacity 1s;
+	animation: toLeft 1s forwards;
 }
 
 #slideDeck section.current {
-	display: flex;
+	opacity: 1;
+	animation: fromRight 1s forwards;
+}
+
+#slideDeck.backwards section {
+	animation: toRight 1s forwards;
+}
+#slideDeck.backwards section.current {
+	animation: fromLeft 1s forwards;
 }
 
 img {
@@ -59,4 +73,21 @@ footer {
 
 #current {
 	margin: 0 1em;
+}
+
+@keyframes fromRight {
+	from { transform: translateX(100vw); }
+	to { transform: translateX(0); }
+}
+@keyframes toLeft {
+	from { transform: translateX(0); }
+	to { transform: translateX(-100vw); }
+}
+@keyframes fromLeft {
+	from { transform: translateX(-100vw); }
+	to { transform: translateX(0); }
+}
+@keyframes toRight {
+	from { transform: translateX(0); }
+	to { transform: translateX(100vw); }
 }

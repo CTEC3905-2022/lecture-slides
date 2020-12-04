@@ -15,11 +15,13 @@ prev.addEventListener('click', prevSlide);
 next.addEventListener('click', nextSlide);
 
 function prevSlide(ev) {
+	slideDeck.classList.add('backwards');
 	currentSlide--;
 	if(currentSlide < 0) { currentSlide = slides.length - 1; }
 	setSlide(currentSlide);
 }
 function nextSlide(ev) {
+	slideDeck.classList.remove('backwards');
 	currentSlide++;
 	if(currentSlide >= slides.length) { currentSlide = 0; }
 	setSlide(currentSlide);
