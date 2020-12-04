@@ -5,7 +5,7 @@ body {
 	margin: 0;
 }
 
-#slides section {
+#slideDeck section {
 	width: 80%;
 	margin: 5vh auto;
 	background-color: #fff;
@@ -18,7 +18,7 @@ body {
 	justify-content: space-around;
 }
 
-#slides section.current {
+#slideDeck section.current {
 	display: flex;
 }
 

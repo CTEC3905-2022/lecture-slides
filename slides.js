@@ -1,11 +1,11 @@
 "use strict";
 
-const slides = document.querySelectorAll('#slides section');
+const slides = document.querySelectorAll('#slideDeck section');
 let currentSlide = 0;
 
 
 function setSlide(slide_number) {
-	let candidate = document.querySelector('#slides section.current');
+	let candidate = document.querySelector('#slideDeck section.current');
 	if(candidate) {
 		candidate.classList.remove('current');
 	}
