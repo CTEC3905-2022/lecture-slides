@@ -15,7 +15,7 @@ body {
 	border-radius: 1em;
 	display: none;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: flex-start;
 }
 
 #slideDeck section.current {
