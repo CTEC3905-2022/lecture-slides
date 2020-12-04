@@ -32,7 +32,6 @@ function nextSlide(ev) {
 }
 
 function keyHandler(ev) {
-	console.log(ev.key);
 	switch (ev.key) {
 		case "ArrowRight":
 			nextSlide();
