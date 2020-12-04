@@ -14,7 +14,6 @@ function setSlide(slide_number) {
 
 prev.addEventListener('click', prevSlide);
 next.addEventListener('click', nextSlide);
-document.addEventListener('keydown', keyHandler);
 
 function prevSlide(ev) {
 	currentSlide--;
@@ -31,7 +30,7 @@ function nextSlide(ev) {
 	setSlide(currentSlide);
 }
 
-function keyHandler(ev) {
+document.addEventListener('keydown', ev => {
 	switch (ev.key) {
 		case "ArrowRight":
 			nextSlide();
@@ -39,9 +38,8 @@ function keyHandler(ev) {
 		case "ArrowLeft":
 			prevSlide();
 			break;
-
 	}
-}
+});
 
 
 setSlide(currentSlide);
