@@ -5,14 +5,10 @@ let currentSlide = 0;
 
 
 function setSlide(slide_number) {
-	let candidate = document.querySelector('#slideDeck section.current');
-	if(candidate) {
-		candidate.classList.remove('current');
-	}
-	let mySlide = slides.item(slide_number);
-	if(mySlide) {
-		mySlide.classList.add('current');
-	}
+	let previous = document.querySelector('#slideDeck section.current');
+	let candidate = slides.item(slide_number);
+	previous.classList.remove('current');
+	candidate.classList.add('current');
 	current.textContent = `${slide_number + 1} of ${slides.length}`;
 }
 
