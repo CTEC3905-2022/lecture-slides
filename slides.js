@@ -3,7 +3,6 @@
 const slides = document.querySelectorAll('#slideDeck section');
 let currentSlide = 0;
 
-
 function setSlide(slide_number) {
 	let previous = document.querySelector('#slideDeck section.current');
 	let candidate = slides.item(slide_number);
@@ -17,16 +16,12 @@ next.addEventListener('click', nextSlide);
 
 function prevSlide(ev) {
 	currentSlide--;
-	if(currentSlide < 0) {
-		currentSlide = slides.length - 1;
-	}
+	if(currentSlide < 0) { currentSlide = slides.length - 1; }
 	setSlide(currentSlide);
 }
 function nextSlide(ev) {
 	currentSlide++;
-	if(currentSlide >= slides.length) {
-		currentSlide = 0;
-	}
+	if(currentSlide >= slides.length) { currentSlide = 0; }
 	setSlide(currentSlide);
 }
 
