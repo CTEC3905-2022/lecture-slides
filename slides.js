@@ -1,7 +1,9 @@
 "use strict";
 
+let queryParams = new URLSearchParams(window.location.search);
+let currentSlide = queryParams.has('slide') ? queryParams.get('slide') : 0;
+
 const slides = document.querySelectorAll('#slideDeck section');
-let currentSlide = 0;
 
 function setSlide(slide_number) {
 	let previous = document.querySelector('#slideDeck section.current');
@@ -9,6 +11,8 @@ function setSlide(slide_number) {
 	previous.classList.remove('current');
 	candidate.classList.add('current');
 	current.textContent = `${slide_number + 1} of ${slides.length}`;
+	queryParams.set('slide', slide_number);
+	window.history.replaceState({}, "", `/?${queryParams.toString()}`);
 }
 
 prev.addEventListener('click', prevSlide);
