@@ -5,16 +5,8 @@ let currentSlide = queryParams.has('slide') ? queryParams.get('slide') : 0;
 let filename = queryParams.has('file') ? queryParams.get('file') : 'index.md';
 let slides;
 
-getMD(filename).then(md => {
-	const mdSlides = md.split(pattern);
-	mdSlides.forEach(mdSlide => {
-		const slide = buildSlide(mdSlide);
-		slideDeck.appendChild(slide);
-	});
-	return slideDeck;
-}).then(container => {
+loadSlides(filename).then(container => {
 	slides = container.querySelectorAll('section');
-	// console.log(slides);
 	slides.item(0).classList.add('current');
 	setSlide(currentSlide);
 });

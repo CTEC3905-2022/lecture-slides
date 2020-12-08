@@ -11,3 +11,12 @@ function buildSlide(mdSlide) {
 	section.innerHTML = converter.makeHtml(mdSlide);
 	return section;
 }
+
+async function loadSlides(filename) {
+	const md = await getMD(filename);
+	const mdSlides = md.split(pattern);
+	mdSlides.forEach(mdSlide => {
+		slideDeck.appendChild(buildSlide(mdSlide));
+	});
+	return slideDeck;
+}
