@@ -2,8 +2,24 @@
 
 let queryParams = new URLSearchParams(window.location.search);
 let currentSlide = queryParams.has('slide') ? queryParams.get('slide') : 0;
+let filename = queryParams.has('file') ? queryParams.get('file') : 'index.md';
+let slides;
 
-const slides = document.querySelectorAll('#slideDeck section');
+getMD(filename).then(md => {
+	const mdSlides = md.split(pattern);
+	mdSlides.forEach(mdSlide => {
+		const slide = buildSlide(mdSlide);
+		slideDeck.appendChild(slide);
+	});
+	return slideDeck;
+}).then(container => {
+	slides = container.querySelectorAll('section');
+	// console.log(slides);
+	slides.item(0).classList.add('current');
+	setSlide(currentSlide);
+});
+
+
 
 function setSlide(slide_number) {
 	let previous = document.querySelector('#slideDeck section.current');
@@ -41,6 +57,3 @@ document.addEventListener('keydown', ev => {
 			break;
 	}
 });
-
-
-setSlide(currentSlide);
