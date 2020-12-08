@@ -7,6 +7,23 @@ body {
 	overflow: hidden;
 }
 
+nav {
+	display: flex;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	opacity: 0.1;
+	transition: opacity 0.4s;
+}
+
+nav:hover {
+	opacity: 1;
+}
+nav a {
+	color: #fff;
+	padding: 0.25em 1em;
+}
+
 #slideDeck section {
 	font-size: 200%;
 	text-align: center;
