@@ -1,6 +1,6 @@
 # CTEC3905: Front-end web development
 
-<div>
+<div class="center">
 	<img src="images/html.svg" alt="html logo">
 	<img src="images/css.svg" alt="css logo">
 	<img src="images/js.svg" alt="js logo">
@@ -12,7 +12,7 @@
 
 ## [Introduction to html](?file=html.md)
 
-<div>
+<div class="center">
 	<img src="images/html.svg" alt="html logo">
 	<img src="images/css.svg" alt="css logo">
 	<img src="images/js.svg" alt="js logo">

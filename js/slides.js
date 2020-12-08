@@ -6,6 +6,7 @@ let filename = queryParams.has('file') ? queryParams.get('file') : 'index.md';
 let slides;
 
 loadSlides(filename).then(container => {
+	hljs.initHighlighting();
 	slides = container.querySelectorAll('section');
 	slides.item(0).classList.add('current');
 	setSlide(currentSlide);
