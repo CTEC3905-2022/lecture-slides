@@ -34,7 +34,7 @@ nav a:hover {
 	padding: 0 4em;
 	box-sizing: border-box;
 	background-color: #fff;
-	color: #222;
+	color: #444;
 	opacity: 0;
 	margin: 5vh 10vw;
 	width: 80vw;
@@ -72,6 +72,10 @@ section h1 {
 
 h1, h2, h3, h4, p, .center {
 	text-align: center;
+}
+
+em, strong {
+	color: #909;
 }
 
 footer {
