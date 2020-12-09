@@ -35,7 +35,7 @@ nav a:hover {
 	background-color: #fff;
 	color: #222;
 	opacity: 0;
-	margin: 5vh auto;
+	margin: 5vh 10vw;
 	width: 80vw;
 	min-height: 90vh;
 	border-radius: 1em;
@@ -44,7 +44,6 @@ nav a:hover {
 	flex-direction: column;
 	justify-content: flex-start;
 	position: absolute;
-	left: 10vw;
 	transition: opacity 1s;
 	animation: toLeft 1s forwards;
 }
