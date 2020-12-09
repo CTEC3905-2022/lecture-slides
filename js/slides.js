@@ -12,8 +12,6 @@ loadSlides(filename).then(container => {
 	setSlide(currentSlide);
 });
 
-
-
 function setSlide(slide_number) {
 	let previous = document.querySelector('#slideDeck section.current');
 	let candidate = slides.item(slide_number);
@@ -21,7 +19,7 @@ function setSlide(slide_number) {
 	candidate.classList.add('current');
 	current.textContent = `${slide_number + 1} of ${slides.length}`;
 	queryParams.set('slide', slide_number);
-	window.history.replaceState({}, "", `/?${queryParams.toString()}`);
+	window.history.replaceState({}, "", `${window.location.origin}?${queryParams.toString()}`);
 }
 
 prev.addEventListener('click', prevSlide);
