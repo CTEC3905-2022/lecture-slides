@@ -19,7 +19,7 @@ function setSlide(slide_number) {
 	candidate.classList.add('current');
 	current.textContent = `${slide_number + 1} of ${slides.length}`;
 	queryParams.set('slide', slide_number);
-	window.history.replaceState({}, "", `${window.location.origin}?${queryParams.toString()}`);
+	window.history.replaceState({}, "", `${window.location.origin}${window.location.pathname}?${queryParams.toString()}`);
 }
 
 prev.addEventListener('click', prevSlide);
