@@ -31,7 +31,8 @@ nav a:hover {
 
 #slideDeck section {
 	font-size: 150%;
-	padding: 0 2em;
+	padding: 0 4em;
+	box-sizing: border-box;
 	background-color: #fff;
 	color: #222;
 	opacity: 0;
