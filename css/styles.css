@@ -5,6 +5,7 @@ body {
 	margin: 0;
 	font-family: "Baloo Chettan 2", sans-serif;
 	overflow: hidden;
+	color: #bbb;
 }
 
 nav {
@@ -20,14 +21,19 @@ nav:hover {
 	opacity: 1;
 }
 nav a {
-	color: #fff;
+	color: inherit;
 	padding: 0.25em 1em;
+	text-decoration: none;
+}
+nav a:hover {
+	color: #fff;
 }
 
 #slideDeck section {
 	font-size: 150%;
 	padding: 0 2em;
 	background-color: #fff;
+	color: #222;
 	opacity: 0;
 	margin: 5vh auto;
 	width: 80vw;
@@ -72,7 +78,6 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	color: #bbb;
 	padding: 0.25em 1em;
 	box-sizing: border-box;
 	user-select: none;
