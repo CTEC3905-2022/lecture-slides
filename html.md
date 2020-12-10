@@ -384,15 +384,21 @@ Text between `<!--` and `-->` won’t show on screen.
 
 ## Related content
 
-These slides can be found on [the CTEC3905 github repository]()
+These slides can be found on [the CTEC3905 github repository](https://github.com/CTEC3905-2020-21/splash) along with:
 
-- [Introduction to CSS]
-- [Introduction to Javascript]
-- [Introduction to workflow]
+- [Introduction to CTEC3905](?file=CTEC3905.md)
+- [Introduction to CSS](?file=css.md)
+- [Introduction to Javascript](?file=css.md)
+
+Each slideshow also has a related video on blackboard.
+
+You may also be interested in the **Introduction to workflow** video which covers the practicalities of integrating HTML, CSS and Javascript using the Atom text editor.
 
 -----
 
-## Codecademy has the following free courses:
+## Further content
+
+**Codecademy** have the following free courses:
 
 - [Learn HTML](https://www.codecademy.com/learn/learn-html)
 - [Learn CSS](https://www.codecademy.com/learn/learn-css)
