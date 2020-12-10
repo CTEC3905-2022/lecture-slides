@@ -9,7 +9,7 @@ loadSlides(filename).then(container => {
 	hljs.initHighlighting();
 	slides = container.querySelectorAll('section');
 	slides.item(0).classList.add('current');
-	setSlide(currentSlide);
+	setSlide(parseInt(currentSlide));
 });
 
 function setSlide(slide_number) {
