@@ -23,17 +23,19 @@
 Hypertext is a non-linear form of distributed document.
 Hypertext documents include embedded links to other hypertext documents.
 
+The web of connected documents may come from multiple servers across many domain names.
+This is what makes the **world wide web** a *web*.
+
 <div class="flex-center">
 	<img src="images/hypertext.svg" alt="Hypertext documents">
 </div>
 
-The web of connected documents may come from multiple servers across many domain names.
-This is what makes the **world wide web** a *web*.
 
 -----
 
-## HTML is used to format documents on the web
+## How the web works
 
+HTML is used to format documents on the web.
 A web server (the **back-end**) *serves* HTML documents via **HyperText Transfer Protocol (HTTP)**.
 Documents can be stored on the server as files or programmatically constructed from templates and data.
 
@@ -44,17 +46,17 @@ Documents can be stored on the server as files or programmatically constructed f
 A web client (the **front-end**, usually a web browser) requests documents and related resources.
 The server responds to requests by returning the document content.
 
-The document is then loaded into the web browsers **Document Object Model** and presented to the user.
+The document is then loaded into the **Document Object Model** and presented to the user.
 The browser applies any **style** information provided before rendering the document and handles any **javascript** code included with the document.
 
 -----
 
-## HyperText Markup Language
+## Markup
 
 Markup refers to the *marking up* of text (e.g. in a manuscript) to indicate how it should be treated when printed.
 
 ```html
-<h2>HyperText Markup Language</h2>
+<h2>Markup</h2>
 <p>
 	Markup refers to the <em>marking up</em> of text (e.g. in a manuscript)
 	to indicate how it should be treated when printed.
@@ -92,8 +94,8 @@ In this module, we are *only* dealing with HTML5 and we expect **you** to use mo
 
 ## HTML documents
 
-*ALL* HTML5 documents require a `<!DOCTYPE html>` and an `<html>` element at the top level.
-The `<html>` element should contain only a `<head>` element and a `<body>` element.
+*ALL* HTML5 documents consist of a `<!DOCTYPE html>` and an `<html>` element **only**.
+The `<html>` element contains a `<head>` element and a `<body>` element **only**.
 Within the `<head>` element there should be a `<title>` element and `<meta>` element defining the character set.
 
 ```
@@ -103,13 +105,9 @@ Within the `<head>` element there should be a `<title>` element and `<meta>` ele
 		<meta charset="utf-8">
 		<title>My amazing webpage</title>
 	</head>
-
 	<body>
-
 		<!-- your (well structured) document content goes here -->
-
 	</body>
-
 </html>
 ```
 <figure>
@@ -147,11 +145,10 @@ Attributes are key/value pairs separated by an equals symbol.
 
 <figure>
 	<img src="images/grumpy-cat-attribute-small.png" alt="diagram of an HTML element with attribute">
-	<figcaption>Attributes are placed inside the opening tag, after the tag name.</figcaption>
+	<figcaption>Attributes are placed inside the opening tag</figcaption>
 </figure>
 
-### Common mistakes
-
+Pay attention to the details.
 
 ```html
 <p attribute="this-is-wrong"attribute2="this-is-wrong">
@@ -162,13 +159,12 @@ Attributes are key/value pairs separated by an equals symbol.
 </p>
 ```
 <figure>
-	<figcaption>Pay attention to the details</figcaption>
+	<figcaption>Common mistakes</figcaption>
 </figure>
 -----
 
 ## Some elements don't need closing tags
 
-For most elements, a missing closing tag is invalid and can cause very unusual problems with rendering your document.
 __Void__ elements such as
 `<br>`, `<img>` and `<input>`
 are not allowed to contain content.
@@ -190,8 +186,6 @@ These elements do not require closing tags.
 	<figcaption>Common void elements with no closing tag</figcaption>
 </figure>
 
-
-
 ```html
 <head>
 	<link rel="stylesheet" href="path/to/styles.css">
@@ -207,7 +201,6 @@ These elements do not require closing tags.
 
 The content of elements can contain nested elements.
 Nesting is essential and expected.
-
 Be **very careful** when nesting elements.
 
 
@@ -220,28 +213,27 @@ Be **very careful** when nesting elements.
 
 ```html
 <p>
-My cat is
-<strong>
-very grumpy.
+	My cat is
+	<strong>very</strong>
+	grumpy.
 </p>
-</strong>
 ```
 <figure>
-	<figcaption>Watch out for this!</figcaption>
+	<figcaption>Indenting carefully can help</figcaption>
 </figure>
 
 ```html
 <p>
-	My cat is <strong>very grumpy</strong>.
+	My cat is <strong>very</strong> grumpy.
 </p>
 ```
 <figure>
-	<figcaption>Better!</figcaption>
+	<figcaption>Readability counts!</figcaption>
 </figure>
+
 -----
 
-
-## Some important elements
+## Paragraphs
 
 Paragraphs are essential for structuring text.
 By default they have a margin top and bottom.
@@ -253,20 +245,20 @@ This separates them from each other and from other content.
 	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 	Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-	Excepteur sint occaecat cupidatat non proident,
-	sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 ```
 <div class="default">
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 	</p>
 </div>
 
 -----
 
-## Some important elements
+## Headings
 
 Headings come in six levels from `<h1>` to `<h6>`, there should usually only be one `<h1></h1>` element in a document.
 For most circumstances, six levels is too much.
@@ -283,12 +275,13 @@ For most circumstances, six levels is too much.
 
 -----
 
-## Some important elements
+## Lists
 
-Lists come in two main forms.
+Lists are collections of list items (`<li>`) which contain the actual content.
+List items are wrapped in containers that come in two main forms.
+
 Unordered lists (`<ul>`) generate bullet points by default.
 Ordered lists (`<ol>`) generate numbered lists by default.
-Lists are collections of list items (`<li>`) which contain the actual content.
 
 ```html
 <ul>
@@ -301,20 +294,18 @@ Lists are collections of list items (`<li>`) which contain the actual content.
 </ol>
 ```
 
-<div class="default">
-	<ul>
-		<li>Unordered one</li>
-		<li>Unordered two</li>
-	</ul>
-	<ol>
-		<li>Ordered one</li>
-		<li>Ordered two</li>
-	</ol>
-</div>
+<ul>
+	<li>Unordered one</li>
+	<li>Unordered two</li>
+</ul>
+<ol>
+	<li>Ordered one</li>
+	<li>Ordered two</li>
+</ol>
 
 -----
 
-## Some important elements
+## Anchors (links)
 
 Anchors or hyperlinks are what makes the web a web.
 Each `<a>` element requires an `href` (hypertext reference) attribute which specifies the link destination.
@@ -322,27 +313,30 @@ Each `<a>` element requires an `href` (hypertext reference) attribute which spec
 ```html
 
 <!-- We can link to anywhere on the web -->
-<a href="https://github.com/CTEC3905-2020-21">Go to another website</a>
-
+<a href="https://github.com/CTEC3905-2020-21">
+	Go to another website
+</a>
 
 <!-- or another page in the same site -->
-<a href="another-page.html">Go to another page</a>
-
+<a href="another-page.html">
+	Go to another page
+</a>
 
 <!-- or scroll to a location in the current page -->
-<a href="#my-section">Jump to an ID on the same page</a>
-
+<a href="#my-section">
+	Jump to an ID on the same page
+</a>
 
 <!-- here's the location with an id attribute -->
 <section id="my-section">
   <p>A paragraph inside the section</p>
 </section>
 ```
-
-
 -----
 
-## Some important elements
+## Images
+
+<div class="large"></div>
 
 Images can be inserted using `<img>` elements.
 These cannot contain content and require no end tag.
@@ -351,22 +345,27 @@ Images **must** include a `src` attribute specifying the path to the source imag
 Images **must** also include an `alt` (alternative text) attribute to specify text to show if the image cannot be loaded/presented.
 
 ```HTML
-<img src="images/html.svg" alt="html5 logo">
-<img src="images/css.svg" alt="css3 logo">
-<img src="images/js.svg" alt="js logo">
-<img src="images/missing.svg" alt="missing logo">
+<img alt="html5 logo" src="images/html.svg">
+<img alt="css3 logo" src="images/css.svg">
+<img alt="js logo" src="images/js.svg">
+<img alt="missing logo" src="images/missing.svg">
 ```
+<figure>
+	<figcaption>Images need two attributes</figcaption>
+</figure>
 
-<div class="flex">
-	<img src="images/html.svg" alt="html5 logo">
-	<img src="images/css.svg" alt="css3 logo">
-	<img src="images/js.svg" alt="js logo">
-	<img src="images/missing.svg" alt="missing logo">
+<div class="flex-center intro">
+	<img alt="html5 logo" src="images/html.svg">
+	<img alt="css3 logo" src="images/css.svg">
+	<img alt="js logo" src="images/js.svg">
+	<img alt="missing logo" src="images/missing.svg">
 </div>
 
 -----
 
-## Some important elements
+## Comments
+
+<div class="larger"></div>
 
 You can add **HTML comments** in your code:
 
@@ -384,6 +383,8 @@ Text between `<!--` and `-->` won’t show on screen.
 
 ## Related content
 
+<div class="larger"></div>
+
 These slides can be found on [the CTEC3905 github repository](https://github.com/CTEC3905-2020-21/splash) along with:
 
 - [Introduction to CTEC3905](?file=CTEC3905.md)
@@ -396,9 +397,13 @@ You may also be interested in the **Introduction to workflow** video which cover
 
 -----
 
+
 ## Further content
 
+<div class="larger"></div>
+
 **Codecademy** have the following free courses:
+
 
 - [Learn HTML](https://www.codecademy.com/learn/learn-html)
 - [Learn CSS](https://www.codecademy.com/learn/learn-css)

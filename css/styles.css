@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
+html {
+	overflow: hidden;
+}
 
 body {
 	background-color: #444;
@@ -9,27 +12,37 @@ body {
 	overflow: hidden;
 	color: #bbb;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 h1, h2, h3, h4 {
 	line-height: 1em;
+	margin: 0.75em 0;
 }
 h1, h2, h3, h4, figure, .center {
 	text-align: center;
 }
+h2:first-child {
+	margin: 0 0 0.5em 0;
+}
+section h1 { font-size: 3em; }
+section h2 { font-size: 2em; }
+section h3 { font-size: 1.7em; }
+section h4 { font-size: 1.4em; }
 img {
 	max-width: 100%;
-}
-figure img {
-	width: auto;
-	max-height: 30vh;
+	max-height: 50vh;
 }
 figcaption {
-	font-size: 0.7em;
+	font-size: 90%;
 	margin-top: 0.25em;
 	color: #444;
 }
 pre {
 	margin: 0;
+}
+figure {
+	margin: 1em auto;
 }
 pre + figure {
 	margin: 0 auto 1em auto;
@@ -40,17 +53,13 @@ pre + h1 {
 em, strong {
 	color: #909;
 }
-
+button {
+	padding: 0 0.25em;
+}
 nav {
 	display: flex;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	opacity: 0.1;
-	transition: opacity 0.4s;
-}
-nav:hover {
-	opacity: 1;
+	align-items: center;
+	height: 2em;
 }
 nav a {
 	color: inherit;
@@ -60,17 +69,20 @@ nav a {
 nav a:hover {
 	color: #fff;
 }
-
+ul, ol {
+	padding-left: 1em;
+}
 footer {
-	position: fixed;
-	bottom: 0;
-	width: 100vw;
+	height: 2em;
 	padding: 0.25em 1em;
 	box-sizing: border-box;
 	user-select: none;
 	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
+	justify-content: center;
+	align-items: center;
+}
+footer small {
+	display: none;
 }
 code {
 	font-family: "Ubuntu Mono", "courier", monospace;
@@ -87,9 +99,12 @@ code.hljs {
 code.hljs.xml, code.hljs.html {
 	background-image: url('../images/html.svg');
 }
-
+img.short {
+	max-height: 10vh;
+}
 .intro img {
-	width: 20%;
+	max-width: 20%;
+	max-height: 20vh;
 }
 .flex {
 	display: flex;
@@ -112,16 +127,24 @@ code.hljs.xml, code.hljs.html {
 	color: #fff;
 	border-radius: 0.5em;
 }
+.large ~ * {	font-size: 120%; }
+.larger ~ * {	font-size: 150%; }
+
+#slideDeck {
+	position: relative;
+	height: calc(100vh - 4em);
+}
 #slideDeck section {
+	position: absolute;
+	top: 0;
 	overflow: hidden;
 	background-color: #fff;
-	padding: 1em 4em;
+	padding: 1em;
 	box-sizing: border-box;
 	color: #444;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	margin: 0;
-	position: absolute;
 	opacity: 0;
 	transition: opacity 1s;
 	animation: toLeft 1s forwards;
@@ -136,44 +159,54 @@ code.hljs.xml, code.hljs.html {
 #slideDeck.backwards section.current {
 	animation: fromLeft 1s forwards;
 }
-
 #toolbar {
-	opacity: 0;
 	display: flex;
 	justify-content: center;
-	font-size: 1.2em;
-	transition: opacity 0.4s;
 }
-
-#toolbar:hover {
-	opacity: 1;
-}
-
 #current {
-	margin: 0 1em;
+	font-size: 1.2em;
+	margin: 0 0.25em;
 }
 
-@media (min-width: 900px) {
+
+@media (min-width: 450px) {
+	footer small {
+		display: inline;
+	}
+	footer {
+		justify-content: space-between;
+	}
 
 	#slideDeck section {
-		font-size: 150%;
+		padding: 1em 2em;
+		border-radius: 0.5em;
+		width: 98%;
+		margin: 0 1%;
+	}
+}
+@media (min-width: 600px) {
+	#slideDeck section {
+		font-size: 110%;
 		border-radius: 1em;
-		width: 80vw;
-		height: 90vh;
-		margin: 5vh 10vw;
+		width: 94%;
+		margin: 0 3%;
+	}
+}
+@media (min-width: 800px) {
+	#slideDeck section {
+		padding: 1em 4em;
+		font-size: 130%;
+	}
+}
+
+@media (min-width: 1200px) {
+	#slideDeck section {
+		font-size: 140%;
+	}
+	h1, h2 {
+		margin: 0.5em 0;
 	}
 
-	section h1 { font-size: 3em; }
-	section h2 { font-size: 2.5em; }
-	section h3 { font-size: 2em; }
-	section h4 { font-size: 1.5em; }
-
-	#toolbar {
-		opacity: 0;
-	}
-	footer:hover #toolbar {
-		opacity: 1;
-	}
 }
 
 @keyframes fromRight {
