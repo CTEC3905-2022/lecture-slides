@@ -58,10 +58,14 @@ document.addEventListener('touchstart', ev => {
 	touchX = ev.touches[0].clientX;
 });
 document.addEventListener('touchmove', ev => {
-	let moveX = touchX - ev.touches[0].clientX;
-	if (moveX < -50) {
-		prevSlide();
-	}	else if (moveX > 50) {
-		nextSlide();
+	if(touchX) {
+		let moveX = touchX - ev.touches[0].clientX;
+		if (moveX < -50) {
+			prevSlide();
+			touchX = null;
+		}	else if (moveX > 50) {
+			nextSlide();
+			touchX = null;
+		}
 	}
 });
