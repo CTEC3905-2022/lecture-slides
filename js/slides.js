@@ -46,6 +46,10 @@ document.addEventListener('keydown', ev => {
 		case "ArrowLeft":
 			prevSlide();
 			break;
+		case "f":
+			document.body.classList.toggle('clean');
+		default:
+			console.log(ev.key);
 	}
 });
 

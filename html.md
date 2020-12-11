@@ -1,3 +1,4 @@
+
 # CTEC3905
 ## Front-end web development
 
@@ -20,38 +21,33 @@
 
 ## **H**yper**T**ext **M**arkup **L**anguage
 
-Hypertext is a non-linear form of distributed document.
-Hypertext documents include embedded links to other hypertext documents.
+HTML is a **markup language** for **hypertext** documents.
 
 The web of connected documents may come from multiple servers across many domain names.
 This is what makes the **world wide web** a *web*.
 
-<div class="flex-center">
+<figure>
 	<img src="images/hypertext.svg" alt="Hypertext documents">
-</div>
-
-
+	<figcaption>Hypertext documents include embedded links to other hypertext documents</figcaption>
+</figure>
 -----
 
 ## How the web works
 
-HTML is used to format documents on the web.
-A web server (the **back-end**) *serves* HTML documents via **HyperText Transfer Protocol (HTTP)**.
-Documents can be stored on the server as files or programmatically constructed from templates and data.
+**HyperText Transfer Protocol (HTTP)** is used to access HTML documents over the internet.
+A web server (the **back-end**) *serves* documents, making them part of the **world wide web** of documents.
 
-<div class="flex-center">
+<figure>
 	<img src="images/client-server.svg" alt="HTML files travel from server to client">
-</div>
+	<figcaption>Communication is via HTTP over the internet</figcaption>
+</figure>
 
-A web client (the **front-end**, usually a web browser) requests documents and related resources.
-The server responds to requests by returning the document content.
-
-The document is then loaded into the **Document Object Model** and presented to the user.
-The browser applies any **style** information provided before rendering the document and handles any **javascript** code included with the document.
-
+A web client (the **front-end**, usually a web browser) needs to request all the linked resources such as images, fonts, scripts and stylesheets in order to render the page.
 -----
 
 ## Markup
+
+<div class="large"></div>
 
 Markup refers to the *marking up* of text (e.g. in a manuscript) to indicate how it should be treated when printed.
 
@@ -70,26 +66,29 @@ The rest of the text should be combined into one paragraph with emphasis added t
 This does not include any information about how to add emphasis or how to format headings or paragraphs.
 -----
 
-## HTML5 is the current version
+## Nesting and indentation
+
+The content of elements can contain nested elements.
+Nesting is essential and expected.
+Be **very careful** when nesting elements.
 
 
+```html
+<!-- Nesting is normal and good -->
+<p>My cat is <strong>very</strong> grumpy.</p>
+
+<!-- No! Never do this! -->
+<p>My cat is <strong>very grumpy.</p></strong>
+
+<p>
+	My cat is
+	<strong>very</strong>
+	grumpy.
+</p>
+```
 <figure>
-	<figcaption>HTML5 logo</figcaption>
-	<img src="images/html.svg" alt="html logo" class="short">
+	<figcaption>Indenting carefully can help, readability counts!</figcaption>
 </figure>
-
-
-Though many features are similar to previous versions, HTML5 introduced improvements and simplifications which mean you don't need to worry about lots of things we used to worry about.
-
-It also introduced *semantic tags* (they **do** what they **say**) e.g. `main`, `header`, `footer`, `section`, `article`, `aside`, `nav`, `figure`, `figcaption`...
-
-```
-<div id="header"></div>  <!-- this -->
-<header></header>        <!-- became this -->
-```
-
-In this module, we are *only* dealing with HTML5 and we expect **you** to use modern approaches.
-
 -----
 
 ## HTML documents
@@ -98,7 +97,7 @@ In this module, we are *only* dealing with HTML5 and we expect **you** to use mo
 The `<html>` element contains a `<head>` element and a `<body>` element **only**.
 Within the `<head>` element there should be a `<title>` element and `<meta>` element defining the character set.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 	<head>
@@ -107,22 +106,61 @@ Within the `<head>` element there should be a `<title>` element and `<meta>` ele
 	</head>
 	<body>
 		<!-- your (well structured) document content goes here -->
+		<!-- (perfectly indented, of course) -->
 	</body>
 </html>
 ```
 <figure>
 	<figcaption>A minimal HTML document</figcaption>
 </figure>
-
-
 -----
 
+## The Document Object Model
+
+The browser requests documents and related content from the web via **HTTP**, parses the HTML and populates the **Document Object Model (DOM)**.
+
+<figure>
+	<img src="images/DOM.svg" alt="Diagram of the Document Object Model">
+	<figcaption>Diagram of the Document Object Model (DOM)</figcaption>
+</figure>
+
+It also parses style information and populates the **CSS Object Model (CCSOM)**,
+combines DOM and CCSOM into the **render tree**, determines the position and size of all elements, and finally paints the pixels to screen
+
+<span class="reference">
+	adapted from <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work">MDN</a>
+</span>
+-----
+
+## HTML5 is the current version
+
+
+```html
+<div id="myheader"></div>
+<div id="navigation"></div>
+<div id="main-content">
+	<div id="section"></div>
+	<div id="special-section"></div>
+</div>
+<div id="the-footer"></div>
+```
+
+HTML5 introduced *semantic tags* (they **do** what they **say**) e.g. `main`, `header`, `footer`, `section`, `article`, `aside`, `nav`, `figure`, `figcaption`...
+
+```html
+<header></header>
+<nav></nav>
+<main>
+	<section></section>
+	<section id=special></section>
+</main>
+<footer></footer>
+```
+-----
 
 ## Anatomy of an HTML element
 
-- Elements consist of content between matching pairs of tags.
-- Tags must include a tag name and are surrounded by angle brackets.
-- Closing tags include a forward slash before the tag name.
+Elements consist of content between matching pairs of tags.
 
 ```html
 <p>It's easy, really.</p>
@@ -135,7 +173,6 @@ Within the `<head>` element there should be a `<title>` element and `<meta>` ele
 	<img src="images/grumpy-cat-small.png" alt="diagram of an HTML element">
 	<figcaption>HTML elements consist of content between tags</figcaption>
 </figure>
-
 -----
 
 ## Elements can have attributes
@@ -143,8 +180,11 @@ Within the `<head>` element there should be a `<title>` element and `<meta>` ele
 Elements can have **attributes** to add information that should not be considered content.
 Attributes are key/value pairs separated by an equals symbol.
 
+```html
+<p class="editor-note">My cat is very grumpy.</p>
+```
 <figure>
-	<img src="images/grumpy-cat-attribute-small.png" alt="diagram of an HTML element with attribute">
+	<!-- <img src="images/grumpy-cat-attribute-small.png" alt="diagram of an HTML element with attribute"> -->
 	<figcaption>Attributes are placed inside the opening tag</figcaption>
 </figure>
 
@@ -197,42 +237,6 @@ These elements do not require closing tags.
 </figure>
 -----
 
-## Nesting
-
-The content of elements can contain nested elements.
-Nesting is essential and expected.
-Be **very careful** when nesting elements.
-
-
-```html
-<p>My cat is <strong>very grumpy.</p></strong>
-```
-<figure>
-	<figcaption>No! Never do this!</figcaption>
-</figure>
-
-```html
-<p>
-	My cat is
-	<strong>very</strong>
-	grumpy.
-</p>
-```
-<figure>
-	<figcaption>Indenting carefully can help</figcaption>
-</figure>
-
-```html
-<p>
-	My cat is <strong>very</strong> grumpy.
-</p>
-```
-<figure>
-	<figcaption>Readability counts!</figcaption>
-</figure>
-
------
-
 ## Paragraphs
 
 Paragraphs are essential for structuring text.
@@ -255,7 +259,6 @@ This separates them from each other and from other content.
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 	</p>
 </div>
-
 -----
 
 ## Headings
@@ -272,7 +275,6 @@ For most circumstances, six levels is too much.
 <h1>Heading level 1</h1>
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
-
 -----
 
 ## Lists
@@ -302,7 +304,6 @@ Ordered lists (`<ol>`) generate numbered lists by default.
 	<li>Ordered one</li>
 	<li>Ordered two</li>
 </ol>
-
 -----
 
 ## Anchors (links)
@@ -336,15 +337,13 @@ Each `<a>` element requires an `href` (hypertext reference) attribute which spec
 
 ## Images
 
-<div class="large"></div>
-
 Images can be inserted using `<img>` elements.
 These cannot contain content and require no end tag.
 
 Images **must** include a `src` attribute specifying the path to the source image file.
 Images **must** also include an `alt` (alternative text) attribute to specify text to show if the image cannot be loaded/presented.
 
-```HTML
+```html
 <img alt="html5 logo" src="images/html.svg">
 <img alt="css3 logo" src="images/css.svg">
 <img alt="js logo" src="images/js.svg">
@@ -360,12 +359,9 @@ Images **must** also include an `alt` (alternative text) attribute to specify te
 	<img alt="js logo" src="images/js.svg">
 	<img alt="missing logo" src="images/missing.svg">
 </div>
-
 -----
 
 ## Comments
-
-<div class="larger"></div>
 
 You can add **HTML comments** in your code:
 
@@ -378,12 +374,9 @@ You can add **HTML comments** in your code:
 </figure>
 ```
 Text between `<!--` and `-->` won’t show on screen.
-
 -----
 
 ## Related content
-
-<div class="larger"></div>
 
 These slides can be found on [the CTEC3905 github repository](https://github.com/CTEC3905-2020-21/splash) along with:
 
@@ -394,13 +387,10 @@ These slides can be found on [the CTEC3905 github repository](https://github.com
 Each slideshow also has a related video on blackboard.
 
 You may also be interested in the **Introduction to workflow** video which covers the practicalities of integrating HTML, CSS and Javascript using the Atom text editor.
-
 -----
 
 
 ## Further content
-
-<div class="larger"></div>
 
 **Codecademy** have the following free courses:
 
@@ -409,7 +399,6 @@ You may also be interested in the **Introduction to workflow** video which cover
 - [Learn CSS](https://www.codecademy.com/learn/learn-css)
 - [Learn how to build websites](https://www.codecademy.com/learn/paths/learn-how-to-build-websites)
 - [Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
-
 -----
 
 ## Introduction to HTML
