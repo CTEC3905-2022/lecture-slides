@@ -32,6 +32,13 @@ This is what makes the **world wide web** a *web*.
 </figure>
 -----
 
+## The first website(?)
+
+Visit it [here](http://info.cern.ch/hypertext/WWW/TheProject.html).
+<iframe src="http://info.cern.ch/hypertext/WWW/TheProject.html" height="100%"></iframe>
+
+-----
+
 ## How the web works
 
 **HyperText Transfer Protocol (HTTP)** is used to access HTML documents over the internet.
@@ -46,8 +53,6 @@ A web client (the **front-end**, usually a web browser) needs to request all the
 -----
 
 ## Markup
-
-<div class="large"></div>
 
 Markup refers to the *marking up* of text (e.g. in a manuscript) to indicate how it should be treated when printed.
 
@@ -66,28 +71,20 @@ The rest of the text should be combined into one paragraph with emphasis added t
 This does not include any information about how to add emphasis or how to format headings or paragraphs.
 -----
 
-## Nesting and indentation
+## Anatomy of an HTML element
 
-The content of elements can contain nested elements.
-Nesting is essential and expected.
-Be **very careful** when nesting elements.
-
+Elements consist of content between matching pairs of tags.
 
 ```html
-<!-- Nesting is normal and good -->
-<p>My cat is <strong>very</strong> grumpy.</p>
-
-<!-- No! Never do this! -->
-<p>My cat is <strong>very grumpy.</p></strong>
-
-<p>
-	My cat is
-	<strong>very</strong>
-	grumpy.
-</p>
+<p>It's easy, really.</p>
 ```
 <figure>
-	<figcaption>Indenting carefully can help, readability counts!</figcaption>
+	<figcaption>Yep, easy</figcaption>
+</figure>
+
+<figure>
+	<img src="images/grumpy-cat-small.png" alt="diagram of an HTML element">
+	<figcaption>HTML elements consist of content between tags</figcaption>
 </figure>
 -----
 
@@ -105,8 +102,8 @@ Within the `<head>` element there should be a `<title>` element and `<meta>` ele
 		<title>My amazing webpage</title>
 	</head>
 	<body>
-		<!-- your (well structured) document content goes here -->
-		<!-- (perfectly indented, of course) -->
+		<!-- your document content goes here -->
+		<!-- BTW: this is a comment, it will not be visible in the page -->
 	</body>
 </html>
 ```
@@ -115,63 +112,31 @@ Within the `<head>` element there should be a `<title>` element and `<meta>` ele
 </figure>
 -----
 
-## The Document Object Model
+## Nesting and indentation
 
-The browser requests documents and related content from the web via **HTTP**, parses the HTML and populates the **Document Object Model (DOM)**.
-
-<figure>
-	<img src="images/DOM.svg" alt="Diagram of the Document Object Model">
-	<figcaption>Diagram of the Document Object Model (DOM)</figcaption>
-</figure>
-
-It also parses style information and populates the **CSS Object Model (CCSOM)**,
-combines DOM and CCSOM into the **render tree**, determines the position and size of all elements, and finally paints the pixels to screen
-
-<span class="reference">
-	adapted from <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work">MDN</a>
-</span>
------
-
-## HTML5 is the current version
+The content of elements can contain nested elements.
+Nesting is essential and expected.
+Be **very careful** when nesting elements.
 
 
 ```html
-<div id="myheader"></div>
-<div id="navigation"></div>
-<div id="main-content">
-	<div id="section"></div>
-	<div id="special-section"></div>
-</div>
-<div id="the-footer"></div>
-```
+<header>
+	<h1>The main heading</h1>
+</header>
 
-HTML5 introduced *semantic tags* (they **do** what they **say**) e.g. `main`, `header`, `footer`, `section`, `article`, `aside`, `nav`, `figure`, `figcaption`...
-
-```html
-<header></header>
-<nav></nav>
 <main>
-	<section></section>
-	<section id=special></section>
+	<section>
+		<h2>Nesting and indentation</h2>
+		<p>
+			The content of elements can contain nested elements.
+			Nesting is essential and expected.
+			Be <strong>very careful</strong> when nesting elements.
+		</p>
+	</section>
 </main>
-<footer></footer>
-```
------
-
-## Anatomy of an HTML element
-
-Elements consist of content between matching pairs of tags.
-
-```html
-<p>It's easy, really.</p>
 ```
 <figure>
-	<figcaption>Yep, easy</figcaption>
-</figure>
-
-<figure>
-	<img src="images/grumpy-cat-small.png" alt="diagram of an HTML element">
-	<figcaption>HTML elements consist of content between tags</figcaption>
+	<figcaption>Indenting carefully can help, readability counts!</figcaption>
 </figure>
 -----
 
@@ -201,6 +166,31 @@ Pay attention to the details.
 <figure>
 	<figcaption>Common mistakes</figcaption>
 </figure>
+-----
+
+## Semantic elements
+
+```html
+<div id="myheader"></div>
+<div id="navigation"></div>
+<div id="main-content">
+	<div class="section"></div>
+	<div class="special-section"></div>
+</div>
+<div id="the-footer"></div>
+```
+
+HTML5 introduced *semantic tags* (they **do** what they **say**) e.g. `main`, `header`, `footer`, `section`, `article`, `aside`, `nav`, `figure`, `figcaption`...
+
+```html
+<header></header>
+<nav></nav>
+<main>
+	<section></section>
+	<section id=special></section>
+</main>
+<footer></footer>
+```
 -----
 
 ## Some elements don't need closing tags
@@ -237,6 +227,27 @@ These elements do not require closing tags.
 </figure>
 -----
 
+## Anchors (links)
+
+Anchors or hyperlinks are what makes the web a web.
+Each `<a>` element requires an `href` (hypertext reference) attribute which specifies the link destination.
+
+```html
+
+<a href="https://github.com/CTEC3905-2020-21">that website</a>.
+
+<a href="another-page.html">that document</a>.
+
+<a href="#my-element">that element</a>.
+
+<section id="my-element">
+	<h2>My section</h2>
+  <p>A paragraph inside the section</p>
+</section>
+```
+<figure><figcaption>Three ways to create links</figcaption></figure>
+-----
+
 ## Paragraphs
 
 Paragraphs are essential for structuring text.
@@ -251,14 +262,13 @@ This separates them from each other and from other content.
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </p>
 ```
-<div class="default">
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-		Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	</p>
-</div>
+
+<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
 -----
 
 ## Headings
@@ -306,35 +316,6 @@ Ordered lists (`<ol>`) generate numbered lists by default.
 </ol>
 -----
 
-## Anchors (links)
-
-Anchors or hyperlinks are what makes the web a web.
-Each `<a>` element requires an `href` (hypertext reference) attribute which specifies the link destination.
-
-```html
-
-<!-- We can link to anywhere on the web -->
-<a href="https://github.com/CTEC3905-2020-21">
-	Go to another website
-</a>
-
-<!-- or another page in the same site -->
-<a href="another-page.html">
-	Go to another page
-</a>
-
-<!-- or scroll to a location in the current page -->
-<a href="#my-section">
-	Jump to an ID on the same page
-</a>
-
-<!-- here's the location with an id attribute -->
-<section id="my-section">
-  <p>A paragraph inside the section</p>
-</section>
-```
------
-
 ## Images
 
 Images can be inserted using `<img>` elements.
@@ -361,22 +342,26 @@ Images **must** also include an `alt` (alternative text) attribute to specify te
 </div>
 -----
 
-## Comments
+## The Document Object Model
 
-You can add **HTML comments** in your code:
-
-```html
-<!-- The figure tag is for image/captions boxes -->
+The browser requests documents and related content from the web via **HTTP**, parses the HTML and populates the **Document Object Model (DOM)**.
 
 <figure>
-  <!-- The img tag goes here -->
-  <!-- The figcaption tag goes here -->
+	<img src="images/DOM.svg" alt="Diagram of the Document Object Model">
+	<figcaption>Diagram of the Document Object Model (DOM)</figcaption>
 </figure>
-```
-Text between `<!--` and `-->` won’t show on screen.
+
+It also parses style information and populates the **CSS Object Model (CCSOM)**,
+combines DOM and CCSOM into the **render tree**, determines the position and size of all elements, and finally paints the pixels to screen
+
+<span class="reference">
+	adapted from <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work">MDN</a>
+</span>
 -----
 
 ## Related content
+
+<div class="large"></div>
 
 These slides can be found on [the CTEC3905 github repository](https://github.com/CTEC3905-2020-21/splash) along with:
 
@@ -389,11 +374,10 @@ Each slideshow also has a related video on blackboard.
 You may also be interested in the **Introduction to workflow** video which covers the practicalities of integrating HTML, CSS and Javascript using the Atom text editor.
 -----
 
-
 ## Further content
+<div class="larger"></div>
 
-**Codecademy** have the following free courses:
-
+**Codecademy** offer the following free courses:
 
 - [Learn HTML](https://www.codecademy.com/learn/learn-html)
 - [Learn CSS](https://www.codecademy.com/learn/learn-css)
