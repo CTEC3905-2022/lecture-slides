@@ -10,6 +10,7 @@
 	<body>
 		<nav>
 			<a href="?">Home</a>
+			<button id="configToggler">&#9432;</button>
 		</nav>
 		<main id="slideDeck">
 
@@ -25,10 +26,32 @@
 			<small>&copy; De Montfort University</small>
 		</footer>
 
+		<article id="config" class="modal">
+			<h2>Splash!</h2>
+			<h3>
+				CTEC3905 slideshow viewer
+			</h3>
+			<p>
+				This is a demonstration project for CTEC3905.
+				It contains all the slides for the module.
+				The index presentation can be accessed using the home link at the top of the page.
+				It contains one slide for each presentation in the system.
+			</p>
+			<p>
+				Swipe or use left/right arrow keys to view next/previous slides.
+				Or use the buttons at the bottom.
+			</p>
+			<p class="flex-center">
+				<input id="skipHello" type="checkbox">
+				<label for="skipHello">Don't show this message again</label>
+			</p>
+			<button id="dismiss">OK</button>
+		</article>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
 		<script src="js/markdown.js"></script>
 		<script src="js/slides.js"></script>
-
+		<script src="js/config.js"></script>
 	</body>
 </html>

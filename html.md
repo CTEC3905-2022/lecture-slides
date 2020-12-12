@@ -277,14 +277,14 @@ Headings come in six levels from `<h1>` to `<h6>`, there should usually only be 
 For most circumstances, six levels is too much.
 
 ```html
-<h1>Heading level 1</h1>
-<h2>Heading level 2</h2>
-<h3>Heading level 3</h3>
+<h1>Level 1</h1>
+<h2>Level 2</h2>
+<h3>Level 3</h3>
 ```
 
-<h1>Heading level 1</h1>
-<h2>Heading level 2</h2>
-<h3>Heading level 3</h3>
+<h1>Level 1</h1>
+<h2>Level 2</h2>
+<h3>Level 3</h3>
 -----
 
 ## Lists

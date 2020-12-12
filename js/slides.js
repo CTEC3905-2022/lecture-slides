@@ -48,8 +48,6 @@ document.addEventListener('keydown', ev => {
 			break;
 		case "f":
 			document.body.classList.toggle('clean');
-		default:
-			console.log(ev.key);
 	}
 });
 

@@ -10,7 +10,6 @@
 	--dark-green: #044;
 }
 
-
 html {
 	overflow: hidden;
 }
@@ -77,16 +76,26 @@ button {
 }
 nav {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	height: 2em;
+	padding: 0 1em;
+	box-sizing: border-box;
 }
 nav a {
 	color: inherit;
-	padding: 0.25em 1em;
+	padding: 0.25em 0;
 	text-decoration: none;
 }
 nav a:hover {
 	color: #fff;
+}
+nav button {
+	border: none;
+	border-radius: 0.5em;
+	color: inherit;
+	background-color: transparent;
+	font-size: 120%;
 }
 ul, ol {
 	padding-left: 1em;
@@ -156,6 +165,32 @@ img.short {
 	color: #fff;
 	border-radius: 0.5em;
 }
+.modal {
+	opacity: 0;
+	transition: opacity 0.4s;
+}
+.modal.active {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.9);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	box-sizing: border-box;
+	padding: 1em;
+	text-align: center;
+}
+.modal.active p { max-width: 400px; }
+.modal.active #dismiss {
+	padding: 0.5em 1.5em;
+}
+
 
 body.clean nav, body.clean footer {
 	opacity: 0;
@@ -196,7 +231,6 @@ iframe {
 	animation: fromLeft 1s forwards;
 }
 #slideDeck section a {
-	text-decoration: none;
 	color: var(--dark-cyan);
 	white-space: nowrap;
 	line-height: 2em;
@@ -212,7 +246,6 @@ iframe {
 	font-size: 1.2em;
 	margin: 0 0.25em;
 }
-
 
 @media (min-width: 450px) {
 	footer small {
@@ -236,6 +269,9 @@ iframe {
 
 }
 @media (min-width: 600px) {
+	#slideDeck section a {
+		text-decoration: none;
+	}
 	#slideDeck {
 		height: calc(100vh - 6em);
 		margin: 1em 0;
