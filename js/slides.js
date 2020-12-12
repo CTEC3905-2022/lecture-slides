@@ -10,6 +10,11 @@ loadSlides(filename).then(container => {
 	slides = container.querySelectorAll('section');
 	slides.item(0).classList.add('current');
 	setSlide(parseInt(currentSlide));
+	slides.forEach((slide, slide_number) => {
+		slide.addEventListener('click', ev => {
+			setSlide(slide_number);
+		})
+	})
 });
 
 function setSlide(slide_number) {
@@ -20,6 +25,9 @@ function setSlide(slide_number) {
 	current.textContent = `${slide_number + 1} of ${slides.length}`;
 	queryParams.set('slide', slide_number);
 	window.history.replaceState({}, "", `${window.location.origin}${window.location.pathname}?${queryParams.toString()}`);
+	if(slideDeck.classList.contains('map')) {
+		candidate.scrollIntoView(false);
+	}
 }
 
 prev.addEventListener('click', prevSlide);
@@ -48,6 +56,15 @@ document.addEventListener('keydown', ev => {
 			break;
 		case "f":
 			document.body.classList.toggle('clean');
+			break;
+		case "m":
+			slideDeck.classList.toggle('map');
+			break;
+		case "Enter":
+			if(slideDeck.classList.contains('map')) {
+				slideDeck.classList.remove('map');
+			}
+			break;
 	}
 });
 

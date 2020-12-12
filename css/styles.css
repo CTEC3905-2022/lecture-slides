@@ -238,6 +238,32 @@ iframe {
 #slideDeck section a:hover {
 	text-decoration: underline;
 }
+
+#slideDeck.map {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	scroll-behavior: smooth;
+}
+#slideDeck.map section {
+	font-size: 60%;
+	padding: 0.5em;
+	transform: scale(0.9);
+	width: 300px;
+	margin: 0.25em;
+	min-height: auto;
+	height: 300px;
+	opacity: 1;
+	position: relative;
+	overflow: auto;
+	animation: none;
+}
+#slideDeck.map section.current {
+	animation: none;
+	border: 3px solid red;
+}
+
 #toolbar {
 	display: flex;
 	justify-content: center;
