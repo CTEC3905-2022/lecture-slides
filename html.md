@@ -32,26 +32,6 @@ This is what makes the **world wide web** a *web*.
 </figure>
 -----
 
-## The first website(?)
-
-Visit it [here](http://info.cern.ch/hypertext/WWW/TheProject.html).
-<iframe src="http://info.cern.ch/hypertext/WWW/TheProject.html" height="100%"></iframe>
-
------
-
-## How the web works
-
-**HyperText Transfer Protocol (HTTP)** is used to access HTML documents over the internet.
-A web server (the **back-end**) *serves* documents, making them part of the **world wide web** of documents.
-
-<figure>
-	<img src="images/client-server.svg" alt="HTML files travel from server to client">
-	<figcaption>Communication is via HTTP over the internet</figcaption>
-</figure>
-
-A web client (the **front-end**, usually a web browser) needs to request all the linked resources such as images, fonts, scripts and stylesheets in order to render the page.
------
-
 ## Markup
 
 Markup refers to the *marking up* of text (e.g. in a manuscript) to indicate how it should be treated when printed.
@@ -353,7 +333,6 @@ The browser requests documents and related content from the web via **HTTP**, pa
 
 It also parses style information and populates the **CSS Object Model (CCSOM)**,
 combines DOM and CCSOM into the **render tree**, determines the position and size of all elements, and finally paints the pixels to screen
-
 <span class="reference">
 	adapted from <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work">MDN</a>
 </span>
