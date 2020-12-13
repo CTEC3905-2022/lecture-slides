@@ -322,20 +322,17 @@ Images **must** also include an `alt` (alternative text) attribute to specify te
 </div>
 -----
 
-## The Document Object Model
+## Summary
 
-The browser requests documents and related content from the web via **HTTP**, parses the HTML and populates the **Document Object Model (DOM)**.
+<div class="larger"></div>
 
-<figure>
-	<img src="images/DOM.svg" alt="Diagram of the Document Object Model">
-	<figcaption>Diagram of the Document Object Model (DOM)</figcaption>
-</figure>
+- HTML documents have a `<!doctype html>` and an `<html>` element
+- The `<head>` element contains information about the document
+- The `<body>` element contains visible content
+- Pay attention to nesting and indentation
+- Use semantic elements wherever possible  
+- You don't need to learn all the HTML elements
 
-It also parses style information and populates the **CSS Object Model (CCSOM)**,
-combines DOM and CCSOM into the **render tree**, determines the position and size of all elements, and finally paints the pixels to screen
-<span class="reference">
-	adapted from <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work">MDN</a>
-</span>
 -----
 
 ## Related content
