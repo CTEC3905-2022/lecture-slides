@@ -202,8 +202,8 @@ body.clean nav, body.clean footer {
 	overflow-y: auto;
 	overflow-x: hidden;
 }
-iframe {
-	height: calc(100vh - 14em);
+#slideDeck:focus {
+	outline: none;
 }
 #slideDeck section {
 	position: absolute;
@@ -258,10 +258,14 @@ iframe {
 	position: relative;
 	overflow: auto;
 	animation: none;
+	border: 3px solid white;
 }
 #slideDeck.map section.current {
 	animation: none;
 	border: 3px solid red;
+}
+#slideDeck.map section figure {
+	max-width: 65%;
 }
 
 #toolbar {
