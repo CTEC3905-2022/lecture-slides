@@ -222,7 +222,7 @@ Each `<a>` element requires an `href` (hypertext reference) attribute which spec
 
 <section id="my-element">
 	<h2>My section</h2>
-  <p>A paragraph inside the section</p>
+	<p>A paragraph inside the section</p>
 </section>
 ```
 <figure><figcaption>Three ways to create links</figcaption></figure>
