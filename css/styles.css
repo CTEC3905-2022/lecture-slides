@@ -194,6 +194,13 @@ img.short {
 
 body.clean nav, body.clean footer {
 	opacity: 0;
+  transition: opacity 0.4s;
+}
+body.clean nav:hover, body.clean footer:hover {
+	opacity: 1;
+}
+iframe {
+	height: calc(100vh - 14em);
 }
 #slideDeck {
 	position: relative;
