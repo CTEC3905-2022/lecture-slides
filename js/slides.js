@@ -20,6 +20,7 @@ function setSlide(slide_number) {
 		slideDeck.focus();
 		candidate.scrollIntoView(false);
 	}
+	progress.style.transform = `translateX(${(currentSlide+1) / slides.length * 100}%)`;
 }
 
 prev.addEventListener('click', prevSlide);
