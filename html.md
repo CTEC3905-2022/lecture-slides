@@ -19,19 +19,6 @@
 </span>
 -----
 
-## **H**yper**T**ext **M**arkup **L**anguage
-
-HTML is a **markup language** for **hypertext** documents.
-
-The web of connected documents may come from multiple servers across many domain names.
-This is what makes the **world wide web** a *web*.
-
-<figure>
-	<img src="images/hypertext.svg" alt="Hypertext documents">
-	<figcaption>Hypertext documents include embedded links to other hypertext documents</figcaption>
-</figure>
------
-
 ## Markup
 
 Markup refers to the *marking up* of text (e.g. in a manuscript) to indicate how it should be treated when printed.
