@@ -65,6 +65,9 @@ function setFull(value) {
 		document.body.classList.remove('clean');
 	}
 }
+function toggleConfig() {
+	config.classList.toggle('active');
+}
 
 document.addEventListener('keydown', ev => {
 	switch (ev.key) {
@@ -79,6 +82,9 @@ document.addEventListener('keydown', ev => {
 			break;
 		case "m":
 			toggleMap();
+			break;
+		case "i":
+			toggleConfig();
 			break;
 		case "Enter":
 			if(slideDeck.classList.contains('map')) {

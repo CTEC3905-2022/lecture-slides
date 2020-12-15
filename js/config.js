@@ -13,9 +13,7 @@ dismiss.addEventListener('click', ev => {
 	localStorage['map'] = JSON.stringify(mapOn.checked);
 });
 
-configToggler.addEventListener('click', ev => {
-	config.classList.toggle('active');
-});
+configToggler.addEventListener('click', toggleConfig);
 
 fullOn.addEventListener('click', ev => {
 	setFull(fullOn.checked);
