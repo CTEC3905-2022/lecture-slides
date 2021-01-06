@@ -259,8 +259,6 @@ For most circumstances, six levels is too much.
 Lists are collections of list items (`<li>`) which contain the actual content.
 List items are wrapped in containers that come in two main forms.
 
-Unordered lists (`<ul>`) generate bullet points by default.
-Ordered lists (`<ol>`) generate numbered lists by default.
 
 ```html
 <ul>
@@ -273,6 +271,10 @@ Ordered lists (`<ol>`) generate numbered lists by default.
 </ol>
 ```
 
+Unordered lists (`<ul>`) generate bullet points by default.
+Ordered lists (`<ol>`) generate numbered lists by default.
+
+<div class="flex j-around">
 <ul>
 	<li>Unordered one</li>
 	<li>Unordered two</li>
@@ -281,6 +283,7 @@ Ordered lists (`<ol>`) generate numbered lists by default.
 	<li>Ordered one</li>
 	<li>Ordered two</li>
 </ol>
+</div>
 -----
 
 ## Images
@@ -348,9 +351,8 @@ You may also be interested in the **Introduction to workflow** video which cover
 - [Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
 -----
 
-## Introduction to HTML
-
 <div class="center hero">
+	<h2>Introduction to HTML</h2>
 
 	<div class="flex-center intro">
 		<img src="images/html.svg" alt="html logo">

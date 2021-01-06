@@ -42,4 +42,8 @@ loadSlides(filename).then(container => {
 	if(fullOn.checked) {
 		toggleFull();
 	}
+	let boxToggle = document.getElementById('boxToggle');
+	if(boxToggle) {
+		boxToggle.addEventListener('click', ev => { box.classList.toggle('viewer') });
+	}
 });

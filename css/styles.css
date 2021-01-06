@@ -63,7 +63,6 @@ pre + figure {
 }
 figure img {
 	max-height: 40vh;
-	min-width: 90%;
 }
 pre + h1 {
 	margin-top: 0.5em;
@@ -74,7 +73,7 @@ em, strong {
 button {
 	padding: 0 0.25em;
 }
-nav {
+body > nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -82,23 +81,32 @@ nav {
 	padding: 0 1em;
 	box-sizing: border-box;
 }
-nav a {
+body > nav a {
 	color: inherit;
 	padding: 0.25em 0;
 	text-decoration: none;
 }
-nav a:hover {
+body > nav a:hover {
 	color: #fff;
 }
-nav button {
+body > nav button {
 	border: none;
 	border-radius: 0.5em;
 	color: inherit;
 	background-color: transparent;
 	font-size: 120%;
 }
+blockquote {
+  margin: 0 3em;
+  font-size: 65%;
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: #bbb;
+}
 ul, ol {
 	padding-left: 1em;
+  margin: 0.5em 0;
+  text-align: left;
 }
 footer {
 	height: 2em;
@@ -117,7 +125,6 @@ code {
 	border-radius: 0.25em;
 	color: var(--light-cyan);
 }
-
 code.hljs {
 	position: relative;
 	background-repeat: no-repeat;
@@ -126,6 +133,9 @@ code.hljs {
 }
 code.hljs.xml, code.hljs.html {
 	background-image: url('../images/html.svg');
+}
+code.hljs.css {
+	background-image: url('../images/css.svg');
 }
 img.short {
 	max-height: 10vh;
@@ -136,6 +146,10 @@ img.short {
 }
 .flex {
 	display: flex;
+}
+.flex-col {
+	display: flex;
+  flex-direction: column;
 }
 .flex-center {
 	display: flex;
@@ -148,6 +162,36 @@ img.short {
 	align-items: center;
 	flex-wrap: wrap;
 }
+.d-column {
+  flex-direction: column;
+}
+.j-end {
+  justify-content: flex-end;
+}
+.j-between {
+  justify-content: space-between;
+}
+.j-around {
+  justify-content: space-around;
+}
+.j-center {
+  justify-content: center;
+}
+.a-start {
+  align-items: flex-start;
+}
+.a-end {
+  align-items: flex-end;
+}
+.a-center {
+  align-items: center;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.expendable {
+  display: none;
+}
 .reference {
 	position: absolute;
 	bottom: 0em;
@@ -155,12 +199,16 @@ img.short {
 	font-size: 0.8em;
 }
 .hero {
+  display: block;
 	margin: 1em;
 	padding: 2em;
 	box-sizing: border-box;
 	background-color: var(--dark-green);
 	color: #fff;
 	border-radius: 0.5em;
+}
+#slideDeck section .hero a {
+  color: white;
 }
 .modal {
   position: absolute;
@@ -189,11 +237,11 @@ img.short {
 .modal #dismiss { padding: 0.5em 1.5em; }
 
 
-body.clean nav, body.clean footer {
+body.clean > nav, body.clean footer {
 	opacity: 0;
   transition: opacity 0.4s;
 }
-body.clean nav:hover, body.clean footer:hover {
+body.clean > nav:hover, body.clean footer:hover {
 	opacity: 1;
 }
 iframe {
@@ -249,7 +297,6 @@ iframe {
 #slideDeck section a {
 	color: var(--dark-cyan);
 	white-space: nowrap;
-	line-height: 2em;
 }
 #slideDeck section a:hover {
 	text-decoration: underline;
@@ -293,20 +340,27 @@ iframe {
 	margin: 0 0.25em;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 420px) {
 	footer small {
 		display: inline;
 	}
 	footer {
 		justify-content: space-between;
 	}
+}
 
+@media (min-width: 500px) {
+  .expendable {
+    display: block;
+  }
 	#slideDeck section {
 		font-size: 110%;
 		padding: 1em 2em;
 		border-radius: 0.5em;
 		width: 98%;
 		margin: 0 1%;
+    max-height: 100%;
+    /* overflow-y: auto; */
 	}
 
 	.reference {
@@ -323,7 +377,7 @@ iframe {
 		margin: 1em 0;
 	}
 	#slideDeck section {
-		font-size: 130%;
+		font-size: 120%;
 		border-radius: 1em;
 		width: 94%;
 		margin: 0 3%;
@@ -335,15 +389,21 @@ iframe {
 @media (min-width: 800px) {
 	#slideDeck section {
 		font-size: 140%;
-		padding: 1em 4em;
 		width: 90%;
 		margin: 0 5%;
 	}
 }
 
+@media (min-width: 1100px) {
+  .narrow {
+    max-width: 55%;
+  }
+}
+
 @media (min-width: 1200px) {
 	#slideDeck section {
 		font-size: 150%;
+    padding: 1em 4em;
 	}
 	h1, h2 {
 		margin: 0.5em 0;
@@ -351,9 +411,15 @@ iframe {
 
 	#slideDeck section .large ~ * {	font-size: 120%; }
 	#slideDeck section .larger ~ * {	font-size: 140%; }
+  #slideDeck section .space {	height: 3em; }
 	.smaller ~ * {	font-size: 80%; }
 	.small ~ * {	font-size: 90%; }
+}
 
+@media (min-width: 1200px) and (min-height: 900px) {
+  #slideDeck section {
+		font-size: 180%;
+	}
 }
 
 @keyframes fromRight {
