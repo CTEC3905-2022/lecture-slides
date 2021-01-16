@@ -30,6 +30,7 @@
 </figure>
 
 -----
+
 <div class="larger space"></div>
 <div class="center">
 	<h2>Introduction to HTML</h2>

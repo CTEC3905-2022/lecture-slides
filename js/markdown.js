@@ -1,5 +1,8 @@
 const pattern = /^-----$/m;
-const converter = new showdown.Converter();
+const options = {
+	tables: true
+}
+const converter = new showdown.Converter(options);
 
 async function getMD(filename) {
 	const response = await fetch(filename);

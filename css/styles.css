@@ -140,9 +140,16 @@ code.hljs.css {
 img.short {
 	max-height: 10vh;
 }
-.intro img {
+img.tall {
+  min-height: 50vh;
+}
+.intro > img {
 	max-width: 20%;
 	max-height: 20vh;
+}
+.intro > figure {
+  margin: 1em 0;
+  width: 20%;
 }
 .flex {
 	display: flex;
@@ -192,6 +199,9 @@ img.short {
 .expendable {
   display: none;
 }
+.shy {
+  margin: 1em;
+}
 .reference {
 	position: absolute;
 	bottom: 0em;
@@ -206,6 +216,9 @@ img.short {
 	background-color: var(--dark-green);
 	color: #fff;
 	border-radius: 0.5em;
+}
+.hero strong, .hero em {
+  color: yellow;
 }
 #slideDeck section .hero a {
   color: white;
@@ -298,9 +311,6 @@ iframe {
 	color: var(--dark-cyan);
 	white-space: nowrap;
 }
-#slideDeck section a:hover {
-	text-decoration: underline;
-}
 
 #slideDeck.map {
 	display: flex;
@@ -369,9 +379,11 @@ iframe {
 
 }
 @media (min-width: 600px) {
-	#slideDeck section a {
-		text-decoration: none;
-	}
+  #slideDeck section a:hover {
+  	text-decoration: underline;
+    color: var(--light-cyan);
+  }
+
 	#slideDeck {
 		height: calc(100vh - 6.25em);
 		margin: 1em 0;
@@ -412,8 +424,9 @@ iframe {
 	#slideDeck section .large ~ * {	font-size: 120%; }
 	#slideDeck section .larger ~ * {	font-size: 140%; }
   #slideDeck section .space {	height: 3em; }
-	.smaller ~ * {	font-size: 80%; }
-	.small ~ * {	font-size: 90%; }
+  #slideDeck section .smallest ~ * {	font-size: 60%; }
+  #slideDeck section .smaller ~ * {	font-size: 80%; }
+	#slideDeck section .small ~ * {	font-size: 90%; }
 }
 
 @media (min-width: 1200px) and (min-height: 900px) {
