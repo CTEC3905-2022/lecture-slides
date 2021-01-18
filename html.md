@@ -333,7 +333,7 @@ These slides can be found on [the CTEC3905 github repository](https://github.com
 
 - [Introduction to CTEC3905](?file=CTEC3905.md)
 - [Introduction to CSS](?file=css.md)
-- [Introduction to Javascript](?file=css.md)
+- [Introduction to Javascript](?file=js.md)
 
 Each slideshow also has a related video on blackboard.
 
