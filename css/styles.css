@@ -137,6 +137,9 @@ code.hljs.xml, code.hljs.html {
 code.hljs.css {
 	background-image: url('../images/css.svg');
 }
+code.hljs.js {
+	background-image: url('../images/js.svg');
+}
 img.short {
 	max-height: 10vh;
 }
