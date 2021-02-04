@@ -68,3 +68,23 @@
 		<a href="?file=css.md">click to view presentation</a>
 	</figcaption>
 </figure>
+
+-----
+
+<div class="larger space"></div>
+<div class="center">
+	<h2>Introduction to Javascript</h2>
+	<div class="flex-center intro">
+		<img src="images/html.svg" alt="html logo">
+		<img src="images/css.svg" alt="css logo">
+		<img src="images/js.svg" alt="js logo">
+	</div>
+	<p class="flex-center">
+		An introduction to Javascript syntax, variables and control structure.
+	</p>
+</div>
+<figure>
+	<figcaption>
+		<a href="?file=js.md">click to view presentation</a>
+	</figcaption>
+</figure>

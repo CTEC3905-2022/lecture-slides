@@ -430,6 +430,20 @@ iframe {
   #slideDeck section .smallest ~ * {	font-size: 60%; }
   #slideDeck section .smaller ~ * {	font-size: 80%; }
 	#slideDeck section .small ~ * {	font-size: 90%; }
+  #slideDeck section .flex-list ~ ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-size: 1.6em;
+  }
+  #slideDeck section .flex-list ~ ul li {
+    padding: 0.25em 0.5em;
+    margin: 0.125em;
+    border-radius: 0.25em;
+    background-color: #252;
+  }
+  #slideDeck section .flex-list ~ ul li a { color: white; }
+  #slideDeck section .flex-list ~ ul li a:visited { color: #bfb; }
 }
 
 @media (min-width: 1200px) and (min-height: 900px) {
