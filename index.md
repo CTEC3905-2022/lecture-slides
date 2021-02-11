@@ -88,3 +88,23 @@
 		<a href="?file=js.md">click to view presentation</a>
 	</figcaption>
 </figure>
+
+-----
+
+<div class="larger space"></div>
+<div class="center">
+	<h2>Responsive web design</h2>
+	<div class="flex-center intro">
+		<img src="images/html.svg" alt="html logo">
+		<img src="images/css.svg" alt="css logo">
+		<img src="images/js.svg" alt="js logo">
+	</div>
+	<p class="flex-center">
+		An introduction to media queries and approaches to mobile-first responsive design.
+	</p>
+</div>
+<figure>
+	<figcaption>
+		<a href="?file=responsive.md">click to view presentation</a>
+	</figcaption>
+</figure>
