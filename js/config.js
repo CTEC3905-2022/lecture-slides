@@ -46,4 +46,18 @@ loadSlides(filename).then(container => {
 	if(boxToggle) {
 		boxToggle.addEventListener('click', ev => { box.classList.toggle('viewer') });
 	}
+
+	// from input.md examples
+	let myInputInput = document.getElementById('myInputInput');
+	let myInputOutput = document.getElementById('myInputOutput');
+	let myChangeOutput = document.getElementById('myChangeOutput');
+	if(myInputInput) {
+		myInputInput.addEventListener('input', ev => {
+			myInputOutput.textContent = myInputInput.value;
+		});
+		myInputInput.addEventListener('change', ev => {
+			myChangeOutput.textContent = myInputInput.value;
+		});
+	}
+
 });

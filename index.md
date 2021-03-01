@@ -108,3 +108,23 @@
 		<a href="?file=responsive.md">click to view presentation</a>
 	</figcaption>
 </figure>
+
+-----
+
+<div class="larger space"></div>
+<div class="center">
+	<h2>Getting user input</h2>
+	<div class="flex-center intro">
+		<img src="images/html.svg" alt="html logo">
+		<img src="images/css.svg" alt="css logo">
+		<img src="images/js.svg" alt="js logo">
+	</div>
+	<p class="flex-center">
+		An introduction to handling user input in HTML, CSS and JavaScript.
+	</p>
+</div>
+<figure>
+	<figcaption>
+		<a href="?file=input.md">click to view presentation</a>
+	</figcaption>
+</figure>
