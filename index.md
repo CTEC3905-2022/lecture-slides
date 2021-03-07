@@ -145,6 +145,6 @@
 </div>
 <figure>
 	<figcaption>
-		<a href="?file=local-storage.md">click to view presentation</a>
+		<a href="?file=data.md">click to view presentation</a>
 	</figcaption>
 </figure>
