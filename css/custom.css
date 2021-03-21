@@ -227,3 +227,65 @@
 	margin-left: 0.5em;
 	padding: 0 0.5em;
 }
+
+
+.animation-examples {
+	display: flex;
+	justify-content: space-around;
+	margin: 1em;
+}
+.animation-examples div {
+	padding: 0.5em 1em;
+	background-color: #eee;
+}
+.animation-example-1 {
+	transition: background-color 0.4s;
+}
+.animation-example-1:hover {
+	background-color: black;
+}
+
+.animation-example-focus {
+	font-size: 1em;
+	transition: 0.4s;
+}
+.animation-example-focus:focus {
+	filter: drop-shadow(0 0 0.5em black);
+	transform: scale(1.2);
+}
+
+#clickable div {
+	transform: translateX(100vw);
+	transition: 0.4s;
+}
+#clickable.clicked div {
+	transform: none;
+}
+
+
+.animation-example-2 {
+	animation: animated1 1s infinite alternate ease-in-out;
+}
+.animation-example-3 {
+	animation: animated2 1s infinite alternate;
+	text-align: center;
+}
+
+
+
+@keyframes animated1 {
+	0% {
+		transform: translateX(-100px) rotateZ(20deg);
+	}
+	100% {
+		transform: translateX(100px) rotateZ(-20deg);
+	}
+}
+@keyframes animated2 {
+	0% {
+		width: 200px;
+	}
+	100% {
+		width: 300px;
+	}
+}

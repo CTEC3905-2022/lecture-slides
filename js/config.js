@@ -60,4 +60,10 @@ loadSlides(filename).then(container => {
 		});
 	}
 
+	let clickable = document.getElementById('clickable');
+	console.log(clickable);
+	if(clickable) {
+		clickable.addEventListener('click', ev => clickable.classList.toggle('clicked'));
+	}
+
 });
