@@ -188,3 +188,23 @@
 		<a href="?file=animation.md">click to view presentation</a>
 	</figcaption>
 </figure>
+
+-----
+
+<div class="larger space"></div>
+<div class="center">
+	<h2>The marking scheme</h2>
+	<div class="flex-center intro">
+		<img src="images/html.svg" alt="html logo">
+		<img src="images/css.svg" alt="css logo">
+		<img src="images/js.svg" alt="js logo">
+	</div>
+	<p class="flex-center">
+		A brief look through the marking scheme.
+	</p>
+</div>
+<figure>
+	<figcaption>
+		<a href="?file=assignment.md">click to view presentation</a>
+	</figcaption>
+</figure>
