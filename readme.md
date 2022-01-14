@@ -2,7 +2,8 @@
 
 The so-called 'splash' system stores and presents slides used in **CTEC3905:** *Front-end web development*.
 
-An index of all available slideshows can be found on [github pages](https://ctec3905-2022.github.io/lecture-slides/).
+The slides can be accessed as a live system on [github pages](https://ctec3905-2022.github.io/lecture-slides/).
+The first slideshow is an index of the slideshows for each week.
 
 > The system is called `splash` for historical reasons.
 It was **originally** designed as a simple splash screen to add to the beginning and end of videos with the module name and video title.
