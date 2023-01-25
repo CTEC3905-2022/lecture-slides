@@ -200,7 +200,8 @@ HTML5 introduced *semantic tags* (they **do** what they **say**) e.g. `main`, `h
 
 Accessible Rich Internet Applications (<abbr>ARIA</abbr>) present information to assistive technologies to improve accessibility.
 Adding aria *roles* and *attributes* to your elements is easy enough.
-Adding a *role* will convert your element into an *ARIA landmark*
+Adding a *role* will convert your element into an *ARIA landmark*.
+See the Chrome [A11y podcast](https://youtu.be/g9Qff0b-lHk) for more.
 
 ```html
 <div role="banner"><h1>Accessibility</h1></div>
@@ -380,6 +381,9 @@ You may also be interested in the **Introduction to workflow** video which cover
 - [Learn CSS](https://www.codecademy.com/learn/learn-css)
 - [Learn how to build websites](https://www.codecademy.com/learn/paths/learn-how-to-build-websites)
 - [Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+
+See the Chrome [A11y podcast](https://youtu.be/g9Qff0b-lHk) for more on accessibility.
+
 -----
 
 <div class="center hero">
