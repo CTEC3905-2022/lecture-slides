@@ -160,6 +160,33 @@ HTML5 introduced *semantic tags* (they **do** what they **say**) e.g. `main`, `h
 ```
 -----
 
+## Accessibility
+
+Accessible Rich Internet Applications (<abbr>ARIA</abbr>) present information to assistive technologies to improve accessibility.
+Adding aria *roles* and *attributes* to your elements is easy enough.
+Adding a *role* will convert your element into an *ARIA landmark*
+
+```html
+<div role="banner"><h1>Accessibility</h1></div>
+<div role="navigation"><a href="#link">Link</a></div>
+<div role="main">
+	<p>ARIA roles create semantic landmarks</p>
+</div>
+```
+
+However, most semantic elements include these roles by default.
+This helps to make you <abbr>HTML</abbr> much simpler and adds accessibility features automatically.
+
+```html
+<header><h1>Accessibility</h1></header>
+<nav><a href="#link">Link</a></nav>
+<main>
+	<p>ARIA roles create semantic landmarks</p>
+</main>
+```
+
+-----
+
 ## Some elements don't need closing tags
 
 __Void__ elements such as
