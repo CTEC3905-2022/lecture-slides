@@ -12,7 +12,7 @@
 
 		<nav>
 			<a href="?">Home</a>
-			<button id="configToggler">&#9432;</button>
+			<button id="configToggler" aria-label="toggle configuration">&#9432;</button>
 		</nav>
 
 		<main id="slideDeck" tabIndex=0></main>
@@ -20,16 +20,16 @@
 		<footer>
 			<progress id="progressBar" value="0" max="0"></progress>
 			<small>splash v0.5.2</small>
-			<section id="toolbar">
-				<button id="prev">&lt;</button>
-				<span id="current">0 of 0</span>
-				<button id="next">&gt;</button>
+			<section id="toolbar" aria-label="toolbar">
+				<button id="prev" aria-label="show previous slide">&lt;</button>
+				<span id="current" aria-label="current slide">0 of 0</span>
+				<button id="next" aria-label="show next slide">&gt;</button>
 			</section>
 			<small>&copy; De Montfort University</small>
 		</footer>
 		<div id="bar"><span id="progress"></span></div>
 
-		<article id="config" class="modal">
+		<article id="config" class="modal" aria-label="configuration">
 			<h2>Splash!</h2>
 			<h3>
 				CTEC3905 slideshow viewer
