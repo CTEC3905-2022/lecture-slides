@@ -158,6 +158,10 @@ input {
   margin: 1em 0;
   width: 20%;
 }
+.intro.smaller > img {
+	max-width: 15%;
+	max-height: 15vh;
+}
 .flex {
 	display: flex;
 }

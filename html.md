@@ -135,6 +135,42 @@ Pay attention to the details.
 </figure>
 -----
 
+
+## Some elements don't need closing tags
+
+__Void__ elements such as
+`<br>`, `<img>` and `<input>`
+are not allowed to contain content.
+These elements do not require closing tags.
+
+
+```html
+<!-- line breaks are very simple -->
+<br>
+
+<!-- images require 'src' and 'alt' attributes -->
+<img src="path/to/image" alt="alternative text">
+
+<!-- inputs have many optional attributes to control their operation -->
+<input type="text" value="default">
+
+```
+<figure>
+	<figcaption>Common void elements with no closing tag</figcaption>
+</figure>
+
+```html
+<head>
+	<link rel="stylesheet" href="path/to/styles.css">
+	<meta charset="utf-8">
+</head>
+```
+<figure>
+	<figcaption>The link and meta elements are also void</figcaption>
+</figure>
+
+-----
+
 ## Semantic elements
 
 ```html
@@ -187,39 +223,6 @@ This helps to make you <abbr>HTML</abbr> much simpler and adds accessibility fea
 
 -----
 
-## Some elements don't need closing tags
-
-__Void__ elements such as
-`<br>`, `<img>` and `<input>`
-are not allowed to contain content.
-These elements do not require closing tags.
-
-
-```html
-<!-- line breaks are very simple -->
-<br>
-
-<!-- images require 'src' and 'alt' attributes -->
-<img src="path/to/image" alt="alternative text">
-
-<!-- inputs have many optional attributes to control their operation -->
-<input type="text" value="default">
-
-```
-<figure>
-	<figcaption>Common void elements with no closing tag</figcaption>
-</figure>
-
-```html
-<head>
-	<link rel="stylesheet" href="path/to/styles.css">
-	<meta charset="utf-8">
-</head>
-```
-<figure>
-	<figcaption>The link and meta elements are also void</figcaption>
-</figure>
------
 
 ## Anchors (links)
 
@@ -268,6 +271,7 @@ This separates them from each other and from other content.
 ## Headings
 
 Headings come in six levels from `<h1>` to `<h6>`, there should usually only be one `<h1></h1>` element in a document.
+Headings provide accessibility *landmarks* for assistive technologies and **should provide a navigable document structure**.
 For most circumstances, six levels is too much.
 
 ```html
@@ -319,7 +323,7 @@ Images can be inserted using `<img>` elements.
 These cannot contain content and require no end tag.
 
 Images **must** include a `src` attribute specifying the path to the source image file.
-Images **must** also include an `alt` (alternative text) attribute to specify text to show if the image cannot be loaded/presented.
+Images **must** also include an `alt` (alternative text) attribute to specify text to announce with assistive technologies and to show if the image cannot be loaded/presented.
 
 ```html
 <img alt="html5 logo" src="images/html.svg">
@@ -331,7 +335,7 @@ Images **must** also include an `alt` (alternative text) attribute to specify te
 	<figcaption>Images need two attributes</figcaption>
 </figure>
 
-<div class="flex-center intro">
+<div class="flex-center intro smaller">
 	<img alt="html5 logo" src="images/html.svg">
 	<img alt="css3 logo" src="images/css.svg">
 	<img alt="js logo" src="images/js.svg">
