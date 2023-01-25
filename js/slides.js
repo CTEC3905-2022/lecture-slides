@@ -21,6 +21,8 @@ function setSlide(slide_number) {
 		candidate.scrollIntoView(false);
 	}
 	progress.style.transform = `translateX(${(currentSlide+1) / slides.length * 100}%)`;
+	progressBar.max = slides.length;
+	progressBar.value = currentSlide;
 }
 
 prev.addEventListener('click', prevSlide);
