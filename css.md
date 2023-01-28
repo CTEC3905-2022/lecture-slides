@@ -55,7 +55,7 @@ A single stylesheet can be used across multiple pages.
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
-		<!-- semantically marked up content goes here -->
+		<!-- content goes here -->
 		<!-- keep style information out of the content -->
 	</body>
 </html>
@@ -317,30 +317,74 @@ div {
 ```
 -----
 
+## The `display` property
+
+The `display` property controls how an element behaves in the page.
+By default, elements typically have the display property set to `block` or `inline`.
+There are also `inline-block` elements.
+
+Elements with display set to `block` will take the full width of their parent.
+
+```html
+<p style="background: yellow">A paragraph is a good example.</p>
+```
+<p style="background: yellow">A paragraph is a good example.</p>
+
+Elements with display set to `inline` will flow nicely within text.
+
+```html
+<p>An <em style="background: yellow">emphasis</em> element is a good example.</p>
+```
+<p>An <em style="background: yellow">emphasis</em> element is a good example.</p>
 
 
 
+-----
 
+## Block elements
 
+Block elements (such as `<div>`s) will arrange themselves vertically and will take up the full width of their container.
 
+```html
+<div></div>
+<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>
+<p></p>
+<ul></ul>
+<ol></ol>
+<li></li>
+<html></html>
+<body></body>
+<header></header>
+<main></main>
+<section></section>
+<article></article>
+<aside></aside>
+<footer></footer>
+<nav></nav>
+```
+<figure><figcaption>Some common block elements (there are many more)</figcaption></figure>
 
+-----
 
+## Inline elements
 
+Inline elements (such as `<span>`s) will arrange themselves like text within a paragraph, wrapping as needed.
+Inline elements take the width of their content.
 
+```html
+<span></span>
+<a></a>
+<button></button>
+<label></label>
+<input>
+<small></small>
+<em></em>
+<strong></strong>
+<code></code>
+```
+<figure><figcaption>Some common inline elements (there are many more)</figcaption></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+-----
 
 ## Normal flow: block elements
 
@@ -374,6 +418,7 @@ span {
 	margin: 15px;
 	padding: 15px;
 	border: 1px solid red;
+	background-color: #ccc;
 }
 ```
 <figure><figcaption>set their background colour</figcaption></figure>
@@ -411,58 +456,17 @@ Mixing block and Inline elements is normal and good but...
 Its very important to understand which elements are *inline* and which are *block*.
 -----
 
-## Block elements
-
-Block elements (such as `<div>`s) will arrange themselves vertically and will take up the full width of their container.
-
-```html
-<div></div>
-<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>
-<p></p>
-<ul></ul>
-<ol></ol>
-<li></li>
-<html></html>
-<body></body>
-<header></header>
-<main></main>
-<section></section>
-<article></article>
-<aside></aside>
-<footer></footer>
-<nav></nav>
-```
-<figure><figcaption>Some common block elements (there are many more)</figcaption></figure>
-
------
-
-## Inline elements
-
-Inline elements (such as `<span>`s) will arrange themselves like text within a paragraph, wrapping as needed.
-Inline elements take the width of their content.
-
-```html
-<span></span>
-
-<a></a>
-<button></button>
-<label></label>
-<input>
-
-<small></small>
-<em></em>
-<strong></strong>
-```
-<figure><figcaption>Some common inline elements (there are many more)</figcaption></figure>
-
------
 
 ## What about images?
 
 Images have a default display property of *inline-block*.
 This is the same as *block* except they don't force the next element to a new line.
 So images can be positioned horizontally.
-
+<span id="inline-block-demo">
+	<img src="images/html.svg" alt="HTML5 logo">
+	<img src="images/css.svg" alt="CSS3 logo">
+	<img src="images/js.svg" alt="JS logo">
+</span>
 ```html
 <img src="images/html.svg" alt="HTML5 logo">
 <img src="images/css.svg" alt="CSS3 logo">
@@ -472,19 +476,17 @@ So images can be positioned horizontally.
 
 ```css
 img {
-	max-width: 50px;
-	max-height: 50px;
-	padding: 10px;
-	background-color: #bbb;
+	max-width: 1em;
+	max-height: 1em;
+	padding: 0.2em;
+	background-color: hsl(150, 50%, 50%);
+	border: 1px solid #bbb;
+	border-radius: 5px;
 }
 ```
 <figure><figcaption>give them a width and they line up horizontally, and they obey the box model</figcaption></figure>
 
-<div id="inline-block-demo">
-	<img src="images/html.svg" alt="HTML5 logo">
-	<img src="images/css.svg" alt="CSS3 logo">
-	<img src="images/js.svg" alt="JS logo">
-</div>
+
 -----
 
 ## Selectors
@@ -505,7 +507,7 @@ a.snazzy {
 	padding: 0 0.25em;
 	text-decoration: none;
 }
-a.snazzy:hover { background-color: #222; }
+a.snazzy:hover { filter: brightness(2.5); }
 
 ```
 <figure><figcaption>Decendent combinator and pseudo-classes</figcaption></figure>
@@ -735,6 +737,96 @@ Try the game [flexbox defense](http://www.flexboxdefense.com/) to learn all the 
 </figure>
 -----
 
+
+## Grid
+
+Grid layouts are extremely powerful.
+Grid allows you to locate child elements very precisely within a layout.
+Grid can be used for *intrinsic* layouts, 
+
+```css
+.grid-demo1 {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+```
+
+Grid items take their implicit positions on the grid automatically.
+
+<div class="grid grid-demo1">
+	<div>Element 1</div>
+	<div>Element 2<br>Is a bit taller</div>
+	<div>Element 3 is a bit wider</div>
+</div>
+<figure><figcaption>grid-template-columns</figcaption></figure>
+
+-----
+
+## Grid gaps
+
+Gaps can be added to flex and grid layouts.
+
+```css
+.grid-demo2 {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 0.5em;
+}
+```
+
+All grid cells will now be separated.
+
+<div class="grid grid-demo1" style="gap: 0.5em">
+	<div>Element 2<br>Is a bit taller</div>
+	<div>Element 3 is a bit wider</div>
+	<div>Element 1</div>
+</div>
+<figure><figcaption>grid-template-columns</figcaption></figure>
+
+-----
+
+## A simple layout with grid
+
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+
+<p style="max-width: 550px; margin: 0;">
+	Grid is perfect for page layouts.
+	We can decide specifically which areas of the grid should be taken up with which element.
+	We can also even <em>overlap</em> elements.
+</p>
+
+<div class="grid grid-demo3">
+	<div>Header</div>
+	<div>
+		<p>This is the main content</p>
+	</div>
+	<div>
+		<p>This is a sidebar</p>
+	</div>
+	<div>Footer</div>
+</div>
+</div>
+
+Here we have done it with  `grid-template-areas`.
+There are many approaches.
+Watch the [layout land](https://www.youtube.com/c/layoutland) youTube series for more details on grid.
+
+```css
+.grid-demo3 {
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: 1fr auto;
+	grid-template-areas: 
+	"header header"
+	"main aside"
+	"footer footer";
+}
+.grid-demo3 header {
+	grid-area: header;
+}
+```
+
+-----
+
 ## Summary
 
 <div class="larger"></div>
@@ -744,7 +836,7 @@ Try the game [flexbox defense](http://www.flexboxdefense.com/) to learn all the 
 - The *display* property determines how HTML elements are laid out
 - *Inline* elements flow and wrap like text
 - *Block* elements take the full width of their container and force a new line
-- *Flex* elements control the layout of their children
+- *Flex* and *grid* elements control the layout of their children
 
 -----
 
@@ -761,6 +853,9 @@ Some additional information and references
 - [CSS default values](https://www.w3schools.com/cssref/css_default_values.asp) from w3schools
 - [CSS selector reference](https://www.w3schools.com/cssref/css_selectors.asp) from w3schools
 - [pseudo-classes reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) from MDN
+- [Layout land](https://www.youtube.com/c/layoutland) is great for learning the basics of grid layouts
+- Also on youTube, [Kevin Powell](https://www.youtube.com/channel/UCJZv4d5rbIKd4QHMPkcABCw) is good for CSS.
+
 
 -----
 

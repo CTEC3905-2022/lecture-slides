@@ -33,12 +33,12 @@
 #slideDeck .selector-example .fruity a { color: #d6d; }
 #slideDeck .selector-example .fresh a { color: #4b6; }
 #slideDeck .selector-example a.snazzy {
-	background-color: #000;
+	background-color: #222;
 	border-radius: 1em;
-	padding: 0 0.25em;
+	padding: 0.1em 0.25em;
 	text-decoration: none;
 }
-#slideDeck .selector-example a.snazzy:hover { background-color: #222; }
+#slideDeck .selector-example a.snazzy:hover { filter:  brightness(2.5); }
 
 .student-example {
 	display: flex;
@@ -180,13 +180,15 @@
 .flow-example span { background-color: #ccc; }
 
 #inline-block-demo {
-	margin: 1em;
+	vertical-align: sub;
 }
 #inline-block-demo img {
-	max-width: 50px;
-	max-height: 50px;
-	padding: 10px;
-	background-color: #bbb;
+	max-width: 1em;
+	max-height: 1em;
+	padding: 0.2em;
+	background-color: hsl(150, 50%, 50%);
+	border: 1px solid #bbb;
+	border-radius: 5px;
 }
 
 
@@ -206,6 +208,47 @@
 	background-color: #ddd;
 }
 
+
+/* grid demo */
+#slideDeck .grid {
+	display: grid;
+	background-color: #333;
+	font-family: serif;
+	margin: 0 auto;
+	border: 5px solid red;
+	max-width: 600px;
+}
+#slideDeck .grid div {
+	color: black;
+	background-color: #ddd;
+	border: 1px solid red;
+	padding: 1em;
+}
+#slideDeck .grid-demo1 {
+	grid-template-columns: auto auto;
+}
+#slideDeck .grid-demo2 {
+	grid-template-columns: auto auto;
+	gap: 0.5em;
+}
+#slideDeck .grid.grid-demo3 {
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: 1fr auto;
+	grid-template-areas: 
+	"header header"
+	"main aside"
+	"footer footer";
+	margin: 0;
+}
+#slideDeck .grid.grid-demo3 div {
+	padding-block: 0;
+}
+#slideDeck .grid-demo3 div:nth-child(1) {
+	grid-area: header;
+}
+#slideDeck .grid-demo3 div:nth-child(4) {
+	grid-area: footer;
+}
 
 /* form validation example */
 
