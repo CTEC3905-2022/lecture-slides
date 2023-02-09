@@ -14,7 +14,7 @@
 ## Javascript **is nothing to do with** Java
 
 
-- The *LiveScript* scripting language was added to Netscape Navigator in 1995.
+- The *LiveScript*/*Mocha* scripting language was added to Netscape Navigator in 1995.
 - It was renamed to **Javascript** to sound a bit like Java, as a marketing ploy.
 
 > ### "*Java* is to *JavaScript* as *car* is to *carpet*" - Chris Heilmann  
@@ -26,9 +26,9 @@
 
 > ### "*ECMAScript* was always an unwanted trade name that sounds like a skin disease." - Brendan Eich
 
-- We will mostly use ECMAScript 2015 (also known as ES6) (>97% coverage)
-- Also a few bits from ECMAScript 2016
-- Latest release is ECMAScript 2020 (~80% coverage)
+- ECMAScript 2015 (also known as ES6) was a *huge* update.
+- We will mostly use this as well as a few bits from ECMAScript 2016
+- Latest release is ECMAScript 2022
 
 -----
 
@@ -42,19 +42,24 @@ We will not be learning the current trending JS technology.
 <div class="flex j-around">
 
 <figure>
-  <img src="images/js.svg" alt="javascript logo">
-  <figcaption>Javascript is powerful without libraries</figcaption>
+  <img src="images/js.svg" alt="javascript logo" style="max-width: 200px">
+  <figcaption>Vanilla Javascript</figcaption>
 </figure>
 
-<div class="large"></div>
-
 <ul>
-  <li>no general purpose libraries such as <em>JQuery</em></li>
-  <li>no frameworks such as <em>react</em>, <em>vue</em> or <em>ember</em>.</li>
-  <li>no cool libraries such as <em>moment.js</em> or <em>D3.js</em></li>
+  <li>No general purpose libraries such as <em>JQuery</em></li>
+  <li>No frameworks such as <em>react</em>, <em>vue</em> or <em>ember</em>.</li>
+  <li>No cool libraries such as <em>moment.js</em> or <em>D3.js</em></li>
+  <li>No <em>typescript</em>
+  <li>Basically assume its not allowed unless its plain old JavaScript</li>
+  <li>It should be written by you</li>
 </ul>
 
+
 </div>
+
+If you *absolutely must* use a library to add some functionality, make sure you understand that you won't get marks for just calling functions.
+You will be judged on *the code you write* and we are not impressed by copying tutorials without thinking.
 
 -----
 
@@ -81,28 +86,54 @@ In this module we will be advocating for inserting the `<script>` element as the
 We also recommend **only** using linked scripts.
 Use the `scr` attribute to point to a file where the code lives.
 There should be no code placed inside the actual element.
+
+-----
+
+## JavaScript modules
+
+If you are writing more complex code, you may want to add `type="module"` and move the code into the `<head>`.
+We encourage this if you know what you are doing.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Page with a script</title>
+    <script src="scripts.js" type="module"></script>
+  </head>
+  <body>
+    <!-- your page content is here -->
+  </body>
+</html>
+```
+
+This will require the [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension for VSCode (which is recommended anyway) and allows for the use of [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) and [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) statements.
+
 -----
 
 ## Hello World
 
 
 Logging to the console.
+
 ```js
 console.log("Hello World");
 ```
+
 Alert with an annoying popup dialogue.
+
 ```js
 alert("Hello World");
 ```
 
-<div class="smaller"></div>
-An element in the DOM with an `id` attribute.
+Or add an element in the DOM with an `id` attribute ...
 
 ```html
 <span id="message-box"></span>
 ```
 
-Use Javascript to update the DOM.
+... and use Javascript to update the DOM.
 
 ```js
 const messageBox = document.getElementById('message-box');
@@ -125,6 +156,9 @@ foo = (a, b) => { a + b; }; // foo is now a function
 foo = undefined;            // foo is now undefined
 foo = null;                 // foo is now null
 ```
+
+As a *dynamically typed* language, JavaScript attaches type information to the data, not the variable.
+New objects are created in memory and old values are *garbage collected*.
 
 -----
 
@@ -159,8 +193,8 @@ foo = "something else";
 ## Basically, **never** use `var`
 
 Since the introduction of `let` and `const` (2015), there is no longer any reason to use the old `var`.
+**You will lose marks if you do.**
 
-The difference is that `let` is tied to a tighter scope.
 
 ```js
 {
@@ -170,6 +204,7 @@ The difference is that `let` is tied to a tighter scope.
 console.log(x); // Uncaught ReferenceError: x is not defined
 ```
 
+The difference is that `let` is tied to a tighter scope.
 This is a good thing and helps avoid confusion and clashes, especially in long code.
 
 ```js
@@ -208,6 +243,7 @@ Math.ceil(1.001);   // 2
 Math.floor(1.999);  // 1
 ```
 See also: `Math.min`, `Math.max`, `Math.pow`, `Math.trunc`, `Math.sin`, `Math.cos`, `Math.sign`, `Math.random` and many more...
+
 -----
 
 ## Strings
@@ -437,7 +473,6 @@ Objects are more complicated than they first seem.
 However, we will not be covering the gory details in this module.
 
 ```js
-
 let article = {
   title: "My article title",
   imageUrl: "images/article1.png",
@@ -454,6 +489,37 @@ article.newKey = 12;
 
 article['awkward key'] = "allowed, but awkward";
 ```
+
+-----
+
+## Classes
+
+Classes are just a syntactic convenience, they provide a wrapper around objects.
+See the GAMR1520 materials ([week5](https://gamr1520.github.io/GAMR1520/weeks/5.html) and [week 6](https://gamr1520.github.io/GAMR1520/weeks/6.html)) for more. 
+
+<div class="smaller"></div>
+
+```js
+class Square {
+    constructor(x, y, xSpeed, ySpeed) {
+        this.x = x;
+        this.y = y;
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
+    }
+    draw(ctx) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.fillRect(-5, -5, 10, 10);
+        ctx.restore();
+    }
+    update(elapsed) {
+        this.x += this.xSpeed * elapsed;
+        this.y += this.ySpeed * elapsed;
+    }
+}
+```
+
 
 -----
 
@@ -478,6 +544,27 @@ myElement.addEventListener('click', toggleHighlighted);
 ```
 
 The above pattern is **extremely useful** for triggering interaction using JavaScript.
+
+-----
+
+## Event types
+
+There are many event types you can listen for.
+The most common for UI interactions are mouse, keyboard and touch events.
+
+Mouse interactions contain information such as where exactly the mouse is located.
+
+- *click*, *dblclick*, *mousedown*, *mouseup*, *contextmenu*
+- *mouseenter*, *mouseout*, *mouseleave*, 
+- *mousemove* 
+
+Keyboard interactions contain information such as which key was pressed (or released).
+- *keydown*, *keyup*
+
+Touch interactions are a lot like mouse interactions but more complex
+
+- *touchstart*, *touchend*
+- *touchmove*
 
 -----
 
