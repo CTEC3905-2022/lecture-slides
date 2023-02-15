@@ -1,5 +1,5 @@
 # CTEC3905
-##Front-end web development
+## Front-end web development
 
 <div class="flex-center intro">
   <img src="images/html.svg" alt="html logo">
@@ -19,7 +19,7 @@ Globally, more traffic is now on mobile devices than desktop devices.
 
 
 <figure>
-	<img src="images/devices-201001-202101.png" alt="Mobile dominance">
+	<img src="images/devices-201001-202301.png" alt="Mobile dominance">
 	<figcaption>Mobile devices are increasingly important</figcaption>
 </figure>
 
@@ -168,6 +168,50 @@ It will tell mobile browsers that your site is optimised for smaller screens and
   <link rel="stylesheet" href="styles.css">
 </head>
 ```
+
+-----
+
+## Preference features
+
+Preference features pick up on the preferences a user has set in their operating system, and help to build a more robust and personalized web experience, especially for those with accessibility needs.
+e.g. `prefers-color-scheme`
+
+```css
+/* default styles apply */
+body {
+	background-color: #333;
+	color: #ddd;
+}
+
+/* min-width media query defines styles to apply above a given breakpoint */
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background-color: #ddd;
+		color: #333;
+	}
+}
+```
+
+-----
+
+
+
+## Intrinsic or responsive?
+
+Media queries and flexbox have been around since 2012.
+
+Grid layout was introduced in 2017 and is rapidly becoming very popular.
+
+Some designers use the term *intrinsic* layout to describe layouts that naturally adapt to different screen sizes.
+For example, *grid* can be used to control layout without the need for media queries.
+
+```css
+.intrinsic {
+	grid-template-columns: repeat(auto-fill, minmax(10ch, 1fr)); 
+}
+```
+
+See [layout land](https://www.youtube.com/@LayoutLand/videos) on youTube for more.
 
 -----
 
