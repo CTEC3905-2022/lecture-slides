@@ -21,7 +21,7 @@ The Document Object Model is a key data structure in the browser.
 	<figcaption>Diagram of the Document Object Model (DOM)</figcaption>
 </figure>
 
-We have used code like this to manipulate it.
+We have used simple code like this to manipulate it.
 
 ```js
 const element = document.querySelector("p");
@@ -44,6 +44,7 @@ We can set [CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS
 const element = document.querySelector("p");
 element.style.setProperty('--custom-variable', "new value");
 ```
+
 -----
 
 ## Creating and editing elements
@@ -69,6 +70,8 @@ element.classList.add(className);
 // Also event listening
 eventTarget.addEventListener(eventType, callback);
 ```
+
+<small>Note: An <code>Element</code> is a specialised kind of <code>Node</code>.</small>
 
 -----
 
@@ -205,6 +208,34 @@ Here is a JSON document representing a blog post.
 }
 
 ```
+-----
+
+## Demonstration code
+
+Demonstration code can be found on [github](https://github.com/CTEC3905-2022/data-demo) with videos on blackboard.
+
+```js
+function buildArticleFromData(data) {
+	const article = document.createElement("article");
+	const img = document.createElement('img');
+	const section = document.createElement("section");
+	const h2 = document.createElement('h2');
+	const p = document.createElement('p');
+
+	h2.textContent = data.title;
+	img.alt = `picsum image ${data.imgId}`;
+	img.src = `https://picsum.photos/id/${data.imgId}/150`;
+	p.textContent = data.description;
+
+	article.appendChild(img);
+	article.appendChild(section);
+	section.appendChild(h2);
+	section.appendChild(p);
+	return article;
+}
+
+```
+
 -----
 
 <div class="center hero">
