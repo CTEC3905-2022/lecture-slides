@@ -67,7 +67,7 @@ Make sure you have addressed these as fully as possible.
 
 - **Regular commits**, not all in the last few days
 - Brief, informative **commit messages**
-- Separate .css and .js files (e.g. **no style="" or onclick="" attributes in HTML**)
+- Separate .css and .js files (e.g. no **style=""** or **onclick=""** attributes in HTML)
 - **CSS layout** of HTML5 elements (e.g. no `<table>` or `<br>` tags for layout)
 - No **JavaScript errors** in the browser console
 - **ES6 syntax** (e.g. "let" and "const" over "var", template literals, arrow functions)
