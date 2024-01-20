@@ -19,7 +19,7 @@ Globally, more traffic is now on mobile devices than desktop devices.
 
 
 <figure>
-	<img src="images/devices-201001-202301.png" alt="Mobile dominance">
+	<img src="images/devices-20091-20241.png" alt="Mobile dominance">
 	<figcaption>Mobile devices are increasingly important</figcaption>
 </figure>
 
