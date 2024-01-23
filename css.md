@@ -429,6 +429,28 @@ div {
 }
 
 ```
+
+-----
+
+# Specificity
+
+Usually, in cases where properties are set in multiple places, later instances will overwrite previous values.
+However, be careful because more *specific* selectors will have precedence.
+
+```CSS
+p.specific { color: yellow; }
+p { color: red; }
+p { color: blue; }
+```
+
+with HTML
+
+```html
+<p>This will be blue</p>
+<p class="specific">This will be yellow</p>
+```
+
+There are new ways to declare cascade layers (using [`@layer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer)) in order of precedence.
 -----
 
 ## The `display` property
@@ -1012,6 +1034,7 @@ Watch the [layout land](https://www.youtube.com/c/layoutland) youTube series for
 
 Some additional information and references
 
+- Check compatibility [in MDN](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) and [caniuse](https://caniuse.com/)
 - Be inspired in the [CSS Zen Garden](http://www.csszengarden.com/)
 - Try this [interactive box model demo](http://guyroutledge.github.io/box-model/)
 - Play [flexbox defense](http://www.flexboxdefense.com/) to learn flexbox
