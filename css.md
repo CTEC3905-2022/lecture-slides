@@ -432,7 +432,7 @@ div {
 
 -----
 
-# Specificity
+## Specificity
 
 Usually, in cases where properties are set in multiple places, later instances will overwrite previous values.
 However, be careful because more *specific* selectors will have precedence.
