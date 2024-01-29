@@ -28,7 +28,7 @@
 
 - ECMAScript 2015 (also known as ES6) was a *huge* update.
 - We will mostly use this as well as a few bits from ECMAScript 2016
-- Latest release is ECMAScript 2022
+- Latest release is ECMAScript 2023
 
 -----
 
