@@ -146,7 +146,7 @@ const myPromise = new Promise((resolve, reject) => {
   if(Math.random() > 0.5)
     resolve("everything is awesome");
   } else {
-    reject("can I get an 'f' in the chat");
+    reject("fffffffail");
   }
 });
 ```
