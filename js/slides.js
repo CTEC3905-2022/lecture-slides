@@ -111,3 +111,15 @@ document.addEventListener('touchmove', ev => {
 		}
 	}
 });
+
+document.addEventListener('wheel', ev => {
+	// console.log(ev)
+	//mouse wheel down or right, next slide
+	if(ev.deltaY < 0 || ev.deltaX > 0){
+		nextSlide()
+	} 
+	//mouse wheel up or left, previous slide
+	else if (ev.deltaY > 0 || ev.deltaX < 0){
+		prevSlide()
+	}
+});
